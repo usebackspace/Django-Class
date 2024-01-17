@@ -6,5 +6,5 @@ def marvel(request):
     return HttpResponse('Spiderman')
 
 def dc(request):
-    return HttpResponse('Super-Man')
+    return HttpResponse('Superman')
 
