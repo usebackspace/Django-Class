@@ -1,0 +1,57 @@
+In this project We wil create one app and write some views function inside the app (marvel) and route url
+inside urls.py of project folder i.e Hero.
+
+steps for creating applications and url routing inside urls.py of project folder:
+
+1. create project -  django-admin startproject Hero3
+
+2. Change Directory - cd Hero3
+
+3. Migrate the files - python manage.py migrate
+
+4. create an app - python manage.py startapp marvel
+
+5. create 2nd app - python manage.py startapp dc
+
+6. Install the app - go to settings.py inside Hero3 folder and add name of the apps inside the list of 
+                     INSTALLED_APPS = [
+                                            'django.contrib.admin',
+                                            'django.contrib.auth',
+                                            'django.contrib.contenttypes',
+                                            'django.contrib.sessions',
+                                            'django.contrib.messages',
+                                            'django.contrib.staticfiles',
+                                            'marvel',
+                                            
+                                      ]
+
+7. Now write logic in views.py of marvel app
+
+    from django.http import HttpResponse
+
+    # Create your views here.
+    def marvel(request):
+        return HttpResponse('Spiderman')
+
+    def dc(request):
+        return HttpResponse('Super-Man')
+
+
+8. Now add url in urls.py of project folder i.e Hero
+
+from django.contrib import admin
+from django.urls import path
+from marvel import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('marvel/', views.marvel),
+    path('dc/', views.dc)
+]
+
+9. python manage.py runserver
+Accesing url
+
+10. http://127.0.0.1:8000/marvel/
+
+11. http://127.0.0.1:8000/dc/
