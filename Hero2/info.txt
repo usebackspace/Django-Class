@@ -2,7 +2,7 @@ In this project We will use alias of Views to make recognize python, that which 
 
 steps for creating applications and url routing inside urls.py of project folder:
 
-1. create project -  django-admin startproject Hero3
+1. create project -  django-admin startproject Hero2
 
 2. Change Directory - cd Hero2
 
