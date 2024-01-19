@@ -24,36 +24,15 @@ In this project we will create seperate template folder inside project i.e Hero4
 
 
 
-7. Now create a new folder , name of folder must be 'templates'
-
-8. Now create html file inside templates folder
+7. Now create a 2 new folder , name of folder must be 'templates' in each app   # NO need to add TEMPLATES_DIR  
+                                                                                  in settings.py file
+8. Now create html file inside templates folder of dc app
    1. batman.html
    2. ironman.html
-   3. spiderman.html
-   4. superman.html
 
-9. Now we wil do most important part, we wil add 'templates' folder path to the Directory
-   1. Go to settings.py file 
-   2. BASE_DIR = Path(__file__).resolve().parent.parent
-      TEMPLATES_DIR = Path(BASE_DIR,'templates')       # Add this TEMPLATES_DIR just below the BASE_DIR
-
-   3. Now add TEMPLATE_DIR variable to the, 
-   
-            TEMPLATES = [
-            {
-                'BACKEND': 'django.template.backends.django.DjangoTemplates',
-                'DIRS': [TEMPLATES_DIR],        # Add TEMPLATES_DIR vaule to the DIRS key
-                'APP_DIRS': True,
-                'OPTIONS': {
-                    'context_processors': [
-                        'django.template.context_processors.debug',
-                        'django.template.context_processors.request',
-                        'django.contrib.auth.context_processors.auth',
-                        'django.contrib.messages.context_processors.messages',
-                    ],
-                },
-            },
-        ]
+9. Now create html file inside templates folder of marvel app
+   1. spiderman.html
+   2. superman.html
 
 10. create urls.py file in both the app, marvel and dc.
 
@@ -128,4 +107,3 @@ Accesing url
 22. http://127.0.0.1:8000/marvel/spiderman/
 
 23. http://127.0.0.1:8000/marvel/ironman/
-
