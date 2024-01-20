@@ -1,8 +1,10 @@
-In this project we will create seperate template folder inside project i.e Hero4_template
+In this project we will create seperate Static folder inside project i.e Hero6_CSFIP
 
-1. Create project -  django-admin startproject Hero4_template
+CSFIP - Creating Static Folder Inside project
 
-2. Change Directory - cd Hero4_template
+1. Create project -  django-admin startproject Hero6_CSFIP
+
+2. Change Directory - cd Hero6_CSFIP
 
 3. Migrate the files - python manage.py migrate
 
@@ -10,7 +12,7 @@ In this project we will create seperate template folder inside project i.e Hero4
 
 5. Create 2nd app - python manage.py startapp dc
 
-6. Install the app - go to settings.py inside Hero4_template folder and add name of the apps inside the list of 
+6. Install the app - go to settings.py inside Hero6_CSFIP folder and add name of the apps inside the list of 
                      INSTALLED_APPS = [
                                             'django.contrib.admin',
                                             'django.contrib.auth',
@@ -27,18 +29,28 @@ In this project we will create seperate template folder inside project i.e Hero4
 7. Now create a new folder , name of folder must be 'templates'
 
 8. Now create html file inside templates folder
-      templates
+
+   templates
      |- batman.html
      |- ironman.html
      |- spiderman.html
      |- superman.html
 
+8.1 Now we create 'static' folder in project folder i.e Hero6_CSFIP, name of folder must be 'static
+    1. Inside static folder we will create two folders 'css' and 'images'
+    2. css - Will contain only .css file.
+    3. images - Will contain only image file.
+
+    static
+      |-css
+      |-images
 
 9. Now we wil do most important part, we wil add 'templates' folder path to the Directory
    1. Go to settings.py file 
    2. BASE_DIR = Path(__file__).resolve().parent.parent
       TEMPLATES_DIR = Path(BASE_DIR,'templates')       # Add this TEMPLATES_DIR just below the BASE_DIR
-
+      STATIC_DIR = Path(BASE_DIR,'static')             # Add this STATIC_DIR just below the TEMPLATE_DIR
+      
    3. Now add TEMPLATE_DIR variable to the, 
    
             TEMPLATES = [
@@ -57,20 +69,27 @@ In this project we will create seperate template folder inside project i.e Hero4
             },
         ]
 
+        4. STATIC_URL = 'static/'
+           STATICFILES_DIRS = [STATIC_DIR]      # Add this STATIC_DIR in STATICFILES_DIRS just below the STATIC_URL
+                                                Name of STATICFILES_DIRS must be as it is 
+
+
 10. create urls.py file in both the app, marvel and dc.
 
 11. Write the business logic for both the app in views.py file.
 
 12. Defining functions in views.py of marvel app
-
     from django.shortcuts import render
 
     # Create your views here.
     def ironman(request):
-        return render(request, 'ironman.html')
+        return render(request, 'ironman.html',{'villian':'Thanos'})
 
     def spiderman(request):
-        return render(request, 'spiderman.html')
+        return render(request, 'spiderman.html',{'villian':'Goblin'})
+
+    # In this we are using extra parameter context, which takes values in form of dictionary.
+
 
 13. Now route url in urls.py file of marvel apps.
 
@@ -90,10 +109,13 @@ In this project we will create seperate template folder inside project i.e Hero4
 
     # Create your views here.
     def superman(request):
-        return render(request,'superman.html')
+        return render(request,'superman.html',{'villian':'Zod'})
 
     def batman(request):
-        return render(request,'batman.html')
+        return render(request,'batman.html',{'villian':'Bayne'})
+
+    # In this we are using extra parameter context, which takes values in form of dictionary.
+    
 
 16. Now route url in urls.py file of dc apps.
 
@@ -108,7 +130,7 @@ In this project we will create seperate template folder inside project i.e Hero4
 
       ]
 
-18. Now add url in urls.py of project folder i.e Hero3
+18. Now add url in urls.py of project folder i.e Hero6_CSFIP
 
       from django.contrib import admin
       from django.urls import path,include
