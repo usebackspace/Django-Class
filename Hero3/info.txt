@@ -40,6 +40,19 @@ steps for url routing inside the applications:
       path('superman/',views.ironman)
       ]
 
+10.1 Defining functions in views.py of marvel app
+
+      from django.http import HttpResponse
+      # Create your views here.
+
+      def spiderman(request):
+      return HttpResponse('I am spider-man')
+
+
+      def ironman(request):
+      return HttpResponse('I am Ironman')
+
+
 11. Defining in urls.py of dc app             # app_name = dc
 
       from django.urls import path
@@ -50,6 +63,18 @@ steps for url routing inside the applications:
       path('batman/',views.batman),
 
       ]
+
+11.1 Defining functions in views.py of dc app
+
+      from django.urls import path
+      from dc import views
+
+      urlpatterns = [
+      path('superman/',views.superman),
+      path('batman/',views.batman),
+
+      ]
+
 
 12. Now add url in urls.py of project folder i.e Hero3
 
