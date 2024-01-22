@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "marvel/css/main.css" %}">
+
+</head>
+<body>
+    <h1>I am a spiderman.</h1>
+    <h1>Willian of spiderman is {{villian}}</h1>
+    
+    <h1>========================================================</h1>
+    <h1>If elif condition</h1>
+    {% if villian == 'Goblin' %}
+    <h2> Spiderman Will fight with {{villian}}</h2>
+    {% elif villian == 'Electro' %}
+    <h2> Spiderman Will fight with {{villian}}</h2>
+    {% else %}
+    <h2>Spiderman will rest.</h2>
+    {% endif %}
+
+    <img src="{% static "marvel/images/spiderman.jpg" %}" alt="spiderman">
+</body>
+</html>

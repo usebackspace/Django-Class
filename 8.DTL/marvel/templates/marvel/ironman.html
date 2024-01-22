@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "marvel/css/main.css" %}">
+
+</head>
+<body>
+    <h1>I am a ironman.</h1>
+    <h1>Willian of ironman is {{villian}}</h1>
+
+    <h1>=======================================================</h1>
+
+    <h1>If Else condition</h1>
+    
+    {% if villian == 'Thanos' %}
+    <h2>Iron man Will Fight </h2>
+    {% else %}
+    <h2> Iron Man Will not fight</h2>
+    {% endif %}
+
+    <img src="{% static "marvel/images/ironman.jpg" %}" alt="ironman">
+</body>
+</html>

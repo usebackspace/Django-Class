@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Using For Loop </h1>
+    <ul>
+    {% for name in villian %}
+        <li>{{name}}</li>
+    {% empty %} {% comment %} If there is no context, then empty part wil run {% endcomment %}
+    <h2>No Villian for fight</h2>
+    {% endfor %}
+    </ul>
+</body>
+</html>

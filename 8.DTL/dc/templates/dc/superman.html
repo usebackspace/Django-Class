@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "dc/css/main.css" %}">
+
+</head>
+<body>
+    <h1>I am a Superman.</h1>
+    <h1>Willian of Superman is {{villian}}</h1>
+    <h1>==========================================================</h1>
+    <h1>Using If condition </h1>
+    {% if villian == 'Zod' %}
+    <h2>Superman Will fight to save world.</h2>
+    {% endif %}
+    <h1>==========================================================</h1>
+
+    <h1>Using If Tag with Filter</h1>
+    {% if villian|length >= 2 %}
+    <h2>Using length filter</h2>
+    {% endif %}
+    
+    <img src="{% static "dc/images/superman.jpg" %}" alt="Batman">
+
+
+</body>
+</html>
