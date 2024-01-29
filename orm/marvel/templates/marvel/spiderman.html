@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "marvel/css/main.css" %}">
+<style>
+    th,td{
+        border: 1px solid black
+    }
+</style>
+</head>
+<body>
+    <h1>I am a spiderman.</h1>
+    <h1>marv Heros {{marv}}</h1>
+    <h1>====================================================================</h1>
+    
+    <table>
+        <tr>
+            <th>Name </th>
+            <th>Heroic Name </th>
+            <th>City </th>
+
+        </tr>
+
+        {% for marv in marv %}
+        <tr>
+        <td>{{marv.name}}</td>
+        <td>{{marv.heroic_name}}</td>
+        <td>{{marv.city}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+
+
+
+
+    <img src="{% static "marvel/images/spiderman.jpg" %}" alt="spiderman">
+</body>
+</html>

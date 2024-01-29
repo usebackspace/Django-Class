@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% comment %} we will consider this template as a base template {% endcomment %}
+{% load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} </title>
+    <link rel="stylesheet" href="{% static "marvel/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "marvel/css/main.css" %}">
+
+</head>
+<body>
+    
+    {% block content1%} {% endblock content1%}
+    <script src="{% static "marvel/js/jquery.js" %}"></script>
+    <script src="{% static "marvel/js/popper.js" %}"></script>
+    <script src="{% static "marvel/js/bootstrap.min.js" %}"></script>
+
+</body>
+</html>
