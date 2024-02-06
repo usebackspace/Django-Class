@@ -1,0 +1,9 @@
+In this project we will see DTL (Djano Template Language) and Template Inheritance.
+
+We will see DTL in 'dc' app and Template Inheritance in 'marvel' app
+
+DTL:
+
+1. First we will create project DTL, inside DTL project we will create 2 apps 'dc' and 'marvel'. Same process till now we have follow.
+
+2. Now we will create templates folder inside 'dc' app.

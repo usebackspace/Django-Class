@@ -1,2 +1,20 @@
 {% extends "marvel/ironman.html" %}
-{% block title %} spiderman{% endblock title%}
+
+{% block title %}
+
+{{block.super}} spiderman
+
+{% endblock title%}
+
+
+{% block content1 %}
+
+<h1>I am a spiderman</h1>
+{% endblock content1 %}
+
+
+
+{% block navbar %}
+{% include "dc/navbar.html" %}
+
+{% endblock navbar %}

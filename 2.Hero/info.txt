@@ -1,6 +1,6 @@
 In this project We will use alias of Views to make recognize python, that which Views is from which app.
 
-steps for creating applications and url routing inside urls.py of project folder:
+Steps for creating applications and url routing inside urls.py of project folder:
 
 1. create project -  django-admin startproject Hero2
 
@@ -23,7 +23,7 @@ steps for creating applications and url routing inside urls.py of project folder
                                             'marvel',
                                             'dc',
                                       ]
-7.. Now write logic in views.py of dc app
+7. Now write logic in views.py of dc app
     from django.http import HttpResponse
     # Create your views here.
 

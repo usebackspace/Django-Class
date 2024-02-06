@@ -1,6 +1,6 @@
-In this project we will setup the url inside the both the applications (marveland dc) using include function.
+In this project we will setup the url inside the both the applications (marvel and dc) using include function.
 
-steps for url routing inside the applications:
+Steps for url routing inside the applications:
 
 1. create project -  django-admin startproject Hero3
 
@@ -30,17 +30,7 @@ steps for url routing inside the applications:
 
 9. Now route url in urls.py file of both the apps.
 
-10. Defining in urls.py of marvel app         # app_name = marvel
-
-    from django.urls import path
-    from marvel import views
-
-    urlpatterns = [
-      path('spiderman/',views.spiderman),
-      path('superman/',views.ironman)
-      ]
-
-10.1 Defining functions in views.py of marvel app
+10. Defining functions in views.py of marvel app
 
       from django.http import HttpResponse
       # Create your views here.
@@ -51,9 +41,18 @@ steps for url routing inside the applications:
 
       def ironman(request):
       return HttpResponse('I am Ironman')
+      
+10.1 Defining in urls.py of marvel app         # app_name = marvel
 
+    from django.urls import path
+    from marvel import views
 
-11. Defining in urls.py of dc app             # app_name = dc
+    urlpatterns = [
+      path('spiderman/',views.spiderman),
+      path('superman/',views.ironman)
+      ]
+
+11. Defining functions in views.py of dc app
 
       from django.urls import path
       from dc import views
@@ -64,7 +63,7 @@ steps for url routing inside the applications:
 
       ]
 
-11.1 Defining functions in views.py of dc app
+11.1 Defining in urls.py of dc app             # app_name = dc
 
       from django.urls import path
       from dc import views
@@ -74,7 +73,6 @@ steps for url routing inside the applications:
       path('batman/',views.batman),
 
       ]
-
 
 12. Now add url in urls.py of project folder i.e Hero3
 
