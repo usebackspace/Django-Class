@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import Dc
 from django.http import HttpResponseRedirect
 # Create your views here.
@@ -15,11 +15,10 @@ def superman(request):
             print(name)
             print(heroic_name)
             # return render(request,'dc/success.html',{'villian':'Zod','dc':dc})
-            return HttpResponseRedirect('/dc/success/')
-
+            # return HttpResponseRedirect('/dc/success/')
+            return redirect('/dc/success/')
     else:
-        dc =Dc()
-        
+        dc =Dc()   
     return render(request,'dc/superman.html',{'villian':'Zod','dc':dc})
 
 def batman(request):
