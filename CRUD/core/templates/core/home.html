@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+
+{% block home %}
+
+    <div class="heading">
+        <h1> CRUD Operations </h1>  
+    </div> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 heroicform">
+                <h2 class="avengerheading"> Avenger Form </h2>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{mf}}
+                    <input type="submit" class="btn btn-success mt-4" value="New Avenger">
+                </form>
+            </div>
+            <div class="col-md-7 heroicform">
+                <h2 class="avengerheading"> Avenger Database </h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Heroic Name</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for m in mm %}
+                    <tr>
+                        <td><b>{{m.id}}</b></td>
+                        <td><b>{{m.name}}</b></td>
+                        <td><b>{{m.heroic_name}}<b></td>
+                        <td>
+                            <a href="{% url "update" m.id %}" class="btn btn-secondary btn-sm">Update</a>
+                            <form action="{% url "delete" m.id %}" method="POST" class="d-inline">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                            </form>   
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock home %}

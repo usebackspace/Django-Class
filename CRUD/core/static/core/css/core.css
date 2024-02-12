@@ -1,0 +1,72 @@
+body{
+  background-color: rgb(7, 116, 88);
+  /* background-image: url('sunbird.jpg'); */
+  /* background-size: 100%; */
+
+}
+
+.name ,.heroicname{
+  width: auto;
+  font-size: large;
+}
+
+.heading{
+  text-align: center;
+  margin-top: 30px;
+  color: azure;
+  font-weight:bolder;
+
+}
+
+.heroicform{
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.heroicform1{
+  margin-top: 30px;
+}
+
+label{
+  font-size: 20px;
+  margin-top: 10px;
+  color: rgb(250, 240, 240);
+}
+
+.table{
+  margin-top: 30px;
+}
+
+b{
+  color: rgb(211, 199, 31);
+}
+
+th{
+  color: rgb(5, 15, 1);
+}
+
+.update{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+
+}
+.avp{
+  color: rgb(240, 237, 239);
+  margin-bottom: 20px;
+}
+
+.updateheading{
+  border: 2px double white;
+  border-radius: 20px;
+  background-color: rgb(187, 4, 4);
+  
+}
+
+.mf{
+  margin-left: 40px;
+}
+
+.avengerheading{
+  color: rgb(235, 231, 8);
+}
