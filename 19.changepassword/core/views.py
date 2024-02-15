@@ -53,9 +53,9 @@ def log_out(request):
     return redirect('/login/')
 
 
-def pcf(request):       # psf - Password Change Form
-    if request.user.is_authenticated:
-        if request.method == 'POST':
+def pcf(request):                                                  # pcf - Password Change Form               
+    if request.user.is_authenticated:                              # pcf - Include old password 
+        if request.method == 'POST':                               
             mf =PasswordChangeForm(request.user,request.POST)
             if mf.is_valid():
                 mf.save()
@@ -68,9 +68,9 @@ def pcf(request):       # psf - Password Change Form
         return redirect('/login/')
     
     
-def spf(request):       # psf - set password form
-    if request.user.is_authenticated:
-        if request.method == 'POST':
+def spf(request):                                                    # spf - set password form
+    if request.user.is_authenticated:                                # spf- Doesn't include old password
+        if request.method == 'POST':                                 
             mf =SetPasswordForm(request.user,request.POST)
             if mf.is_valid():
                 mf.save()
