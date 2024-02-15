@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignupForm
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm,SetPasswordForm
+from django.contrib.auth import authenticate,login,logout,update_session_auth_hash
 # Create your views here.
 
 # def sign_up(request):
@@ -51,3 +51,33 @@ def profile(request):
 def log_out(request):
     logout(request)
     return redirect('/login/')
+
+
+def pcf(request):       # psf - Password Change Form
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            mf =PasswordChangeForm(request.user,request.POST)
+            if mf.is_valid():
+                mf.save()
+                update_session_auth_hash(request,mf.user)
+                return redirect('/profile/')
+        else: 
+            mf = PasswordChangeForm(request.user)
+        return render(request,'core/pcf.html',{'mf':mf})
+    else:
+        return redirect('/login/')
+    
+    
+def spf(request):       # psf - set password form
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            mf =SetPasswordForm(request.user,request.POST)
+            if mf.is_valid():
+                mf.save()
+                update_session_auth_hash(request,mf.user)
+                return redirect('/profile/')
+        else: 
+            mf = SetPasswordForm(request.user)
+        return render(request,'core/pcf.html',{'mf':mf})
+    else:
+        return redirect('/login/')
