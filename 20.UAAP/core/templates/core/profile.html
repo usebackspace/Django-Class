@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Successful {{name}}</h1>
+    <br>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for m in mf %}
+            {{m.label_tag}} {{m}} {{m.error}}  <br><br>      
+        {% endfor %}
+        <input type="submit" value="Save"></a>
+    </form>
+    <a href="{% url "logout" %}"><input type="button" value="logout"></a>
+    <br>
+    <a href="{% url "pcf" %}"><input type="button" value="change password"></a>
+    <a href="{% url "spf" %}"><input type="button" value="set password"></a>
+</body>
+</html>
