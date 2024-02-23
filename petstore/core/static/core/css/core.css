@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(248, 242, 154);
+  background-color: rgb(225, 226, 143);
   /* background-image: url('sunbird.jpg'); */
   /* background-size: 100%; */
 
@@ -25,8 +25,52 @@ body{
   background-color: rgb(245, 229, 10);
 }
 
-
-
 .custom-search-bar {
   width: 300px; /* Adjust the width as needed */
+}
+
+.dropdown-menu{
+  background-color: rgb(245, 229, 10);
+  border-radius: 10px;
+}
+
+.mb-2 {
+  border-radius: 30px;
+  margin-left: 50px;
+}
+
+.mb-3{
+  margin-left: 60px;
+
+}
+.about{
+  margin-top: 100px;
+}
+
+.dog_categories_card{
+  margin-top: 70px;
+  border-radius: 20px;
+
+}
+
+.card-title{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.card-text{
+  text-align: center;
+}
+
+.dog_card{
+  background-color: rgb(245, 229, 10);
+}
+
+.petdetails{
+  margin-top: 100px;
+}
+
+.rupee{
+  text-decoration:line-through;
 }
