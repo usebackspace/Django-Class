@@ -12,7 +12,7 @@ def fbv(request):
 
 class Cbv(View):
     def get(self,request):
-            return HttpResponse('<h1> Class Base View </h1>')
+        return HttpResponse('<h1> Class Base View </h1>')
        
 def home(request):
     return render(request,'core/home.html')
