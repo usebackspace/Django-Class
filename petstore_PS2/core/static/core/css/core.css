@@ -74,3 +74,25 @@ body{
 .rupee{
   text-decoration:line-through;
 }
+
+.register{
+  margin-top: 80px;
+  width: 350px;
+  background-color: rgb(245, 229, 10);
+  border-radius: 20px;
+  
+  
+
+}
+
+.register-button{
+  margin-bottom: 20px;
+}
+
+.register-heading{
+  margin-top: 20px;
+}
+
+.register-button{
+  width: 270px;
+}

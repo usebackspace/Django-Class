@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import View
 from . models import Customer,Pet,Order,Cart
+from . forms import RegistrationForm,AuthenticateForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate,login,logout,update_session_auth_hash
 
 # Create your views here.
 # def home(request):
@@ -23,6 +26,8 @@ def contact(request):
 # def dog_categories(request):
 #     return render(request,'core/dog_categories.html')
 
+#=========================================================================================================
+
 #--- Class Based View of dog_categories ---
 class DogCategoriesView(View):
     def get(self,request):
@@ -44,6 +49,7 @@ class CatCategoriesView(View):
 def bird_categories(request):
     return render(request,'core/bird_categories.html')
 
+#=========================================================================================================
 # def pet_details(request):
 #     return render(request,'core/pet_details.html')
 
@@ -59,3 +65,47 @@ class PetDetailView(View):
         # ------ code end for caculate percentage ---------
             
         return render(request,'core/pet_details.html',{'pd':pet_detail,'percentage':percentage})
+
+
+#=========================================================================================================
+
+
+def registration(request):
+    if not request.user.is_authenticated:
+        if request.method == 'POST':
+            mf = RegistrationForm(request.POST)
+            if mf.is_valid():
+                mf.save()
+                return redirect('registration')    
+        else:
+            mf  = RegistrationForm()
+        return render(request,'core/registration.html',{'mf':mf})
+    else:
+        return redirect('profile')
+
+def log_in(request):
+    if not request.user.is_authenticated:  # check whether user is not login ,if so it will show login option
+        if request.method == 'POST':       # otherwise it will redirect to the profile page 
+            mf = AuthenticateForm(request,request.POST)
+            if mf.is_valid():
+                name = mf.cleaned_data['username']
+                pas = mf.cleaned_data['password']
+                user = authenticate(username=name, password=pas)
+                if user is not None:
+                    login(request, user)
+                    return redirect('profile')
+        else:
+            mf = AuthenticateForm()
+        return render(request,'core/login.html',{'mf':mf})
+    else:
+        return redirect('profile')
+
+def profile(request):
+    if request.user.is_authenticated:  # This check wheter user is login, if not it will redirect to login page
+        return render(request,'core/profile.html',{'name':request.user})
+    else:                                                # request.user returns the username
+        return redirect('login')
+
+def log_out(request):
+    logout(request)
+    return redirect('home')

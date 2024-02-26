@@ -10,24 +10,33 @@ urlpatterns = [
     # path('',views.home,name='home'),
     path('',views.HomeView.as_view(),name='home'),
 
-    path('about',views.about,name='about'),
+    path('about/',views.about,name='about'),
 
-    path('contact',views.contact,name='contact'),
+    path('contact/',views.contact,name='contact'),
 
     #------- Dog View Functions ------------
     # path('dog_categories',views.dog_categories,name='dogcategories'),
-    path('dog_categories',views.DogCategoriesView.as_view(),name='dogcategories'),
+    path('dog_categories/',views.DogCategoriesView.as_view(),name='dogcategories'),
 
     #------- Cat View Functions ------------
     # path('cat_categories',views.cat_categories,name='catcategories'),
-    path('cat_categories',views.CatCategoriesView.as_view(),name='catcategories'),
+    path('cat_categories/',views.CatCategoriesView.as_view(),name='catcategories'),
 
     #------- Bird View Functions ------------
-    path('bird_categories',views.bird_categories,name='birdcategories'),
+    path('bird_categories/',views.bird_categories,name='birdcategories'),
 
     
     # path('pet_details',views.pet_details,name='petdetails'),
     path('pet_details/<int:id>/',views.PetDetailView.as_view(),name='petdetails'),
+
+    path('registration/',views.registration,name='registration'),
+
+    path('login/',views.log_in,name='login'),
+
+    path('profile/',views.profile,name='profile'),
+
+    path('logout/',views.log_out, name="logout"),
+
 ]
 
 #--------- THis is will add file to media folder -----------
