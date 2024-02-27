@@ -37,6 +37,8 @@ urlpatterns = [
 
     path('logout/',views.log_out, name="logout"),
 
+    path('changepassword/',views.changepassword, name="changepassword"),
+
 ]
 
 #--------- THis is will add file to media folder -----------

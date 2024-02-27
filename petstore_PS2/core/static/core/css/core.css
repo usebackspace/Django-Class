@@ -80,9 +80,6 @@ body{
   width: 350px;
   background-color: rgb(245, 229, 10);
   border-radius: 20px;
-  
-  
-
 }
 
 .register-button{
@@ -95,4 +92,24 @@ body{
 
 .register-button{
   width: 270px;
+}
+
+.profile{
+  margin-top: 80px;
+}
+
+.change-password{
+  margin-top: 20px;
+  width: 350px;
+  background-color: rgb(245, 229, 10);
+  border-radius: 20px;
+}
+
+
+.profile-form{
+  margin-top: 20px;
+  width: 350px;
+  background-color: rgb(245, 229, 10);
+  border-radius: 20px;
+  
 }

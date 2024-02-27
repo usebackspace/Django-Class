@@ -30,7 +30,7 @@
           <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
             <li class="nav-item active">
-              <a class="nav-link mr-4" href="{% url "profile" %}">Welcome {{user.first_name}}<span class="sr-only">(current)</span></a>
+              <a class="nav-link mr-4" href="{% url "profile" %}"><b>Welcome {{user.first_name}}</b></a>
             </li>     
             </li><li class="nav-item">
               <a class="nav-link mr-4" href="{% url "logout" %}">Logout</a>

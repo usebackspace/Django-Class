@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from django.views import View
 from . models import Customer,Pet,Order,Cart
-from . forms import RegistrationForm,AuthenticateForm
-from django.contrib.auth.forms import AuthenticationForm
+from . forms import RegistrationForm,AuthenticateForm,ChangePasswordForm,UserProfileForm,AdminProfileForm
+from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib.auth import authenticate,login,logout,update_session_auth_hash
 
 # Create your views here.
@@ -93,7 +93,7 @@ def log_in(request):
                 user = authenticate(username=name, password=pas)
                 if user is not None:
                     login(request, user)
-                    return redirect('profile')
+                    return redirect('/')
         else:
             mf = AuthenticateForm()
         return render(request,'core/login.html',{'mf':mf})
@@ -102,10 +102,37 @@ def log_in(request):
 
 def profile(request):
     if request.user.is_authenticated:  # This check wheter user is login, if not it will redirect to login page
-        return render(request,'core/profile.html',{'name':request.user})
+        if request.method == 'POST':
+            if request.user.is_superuser == True:
+                mf = AdminProfileForm(request.POST,instance=request.user)
+            else:
+                mf = UserProfileForm(request.POST,instance=request.user)
+            if mf.is_valid():
+                mf.save()
+        else:
+            if request.user.is_superuser == True:
+                mf = AdminProfileForm(instance=request.user)
+            else:
+                mf = UserProfileForm(instance=request.user)
+        return render(request,'core/profile.html',{'name':request.user,'mf':mf})
     else:                                                # request.user returns the username
         return redirect('login')
 
 def log_out(request):
     logout(request)
     return redirect('home')
+
+
+def changepassword(request):                                       # Password Change Form               
+    if request.user.is_authenticated:                              # Include old password 
+        if request.method == 'POST':                               
+            mf =ChangePasswordForm(request.user,request.POST)
+            if mf.is_valid():
+                mf.save()
+                update_session_auth_hash(request,mf.user)
+                return redirect('profile')
+        else:
+            mf = ChangePasswordForm(request.user)
+        return render(request,'core/changepassword.html',{'mf':mf})
+    else:
+        return redirect('login')
