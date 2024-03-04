@@ -5,3 +5,4 @@ from .forms import MarvelForm
 def x(request):
     mf = MarvelForm()
     return render(request,'core/x.html',{'mf':mf})
+

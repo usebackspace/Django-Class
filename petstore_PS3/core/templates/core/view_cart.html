@@ -97,13 +97,6 @@
         </div>
       </div>
     </div>
-{% for item in cart_items %}
-
-<a href="{% url 'add_quantity' item.product.id %}">+</a>
-<p>Quantity: {{ item.quantity }}</p>
-<a href="{% url 'delete_quantity' item.product.id %}">-</a>
-ipi {{item.id }}
-{% endfor %}
 {% endblock content %}
 
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import Dc
+from .forms import DcForm
 from django.http import HttpResponseRedirect
 # Create your views here.
 def success(request):
@@ -8,7 +8,7 @@ def success(request):
 
 def superman(request):
     if request.method == 'POST':
-        dc= Dc(request.POST)
+        dc= DcForm(request.POST)
         if dc.is_valid():
             name = dc.cleaned_data['name']
             heroic_name = dc.cleaned_data['heroic_name']
@@ -18,7 +18,7 @@ def superman(request):
             return HttpResponseRedirect('/dc/success/')
 
     else:
-        dc =Dc()
+        dc =DcForm()
         
     return render(request,'dc/superman.html',{'villian':'Zod','dc':dc})
 

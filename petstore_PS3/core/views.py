@@ -162,12 +162,12 @@ def add_to_cart(request, id):    # This 'id' is coming from 'pet.id' which hold 
         return redirect('login')                # If user is not login it will redirect to login page
 
 def view_cart(request):
-    cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of only current user, and show product available in the cart of the current user.
+    cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of current user, and show product available in the cart of the current user.
     return render(request, 'core/view_cart.html', {'cart_items': cart_items})
 
 def add_quantity(request, id):
     product = get_object_or_404(Cart, pk=id)    # If the object is found, it returns the object. If not, it raises an HTTP 404 exception (Http404).
-    product.quantity += 1                   
+    product.quantity += 1                       # If object found it will be add 1 quantity to the current object   
     product.save()
     return redirect('viewcart')
 

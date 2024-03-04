@@ -6,9 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST" >
+     <form action="" method="POST" novalidate>
         {% csrf_token %}
-        {{mf.as_p}}
+        {% for f in mf %}
+            {{f.label_tag}} {{f}} {{f.errors|striptags}} <br><br> 
+        {% endfor %}
+        
         <input type="submit" value="Login">
     </form>
     <br>
