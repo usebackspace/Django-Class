@@ -5,6 +5,7 @@ from . forms import RegistrationForm,AuthenticateForm,ChangePasswordForm,UserPro
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib.auth import authenticate,login,logout,update_session_auth_hash
 from django.db.models import F
+from django.contrib.auth.models import User
 
 # Create your views here.
 # def home(request):
@@ -199,5 +200,31 @@ def checkout(request):
 #===================================== Address ============================================
 
 def address(request):
-    mf =CustomerForm()
-    return render(request,'core/address.html',{'mf':mf})
+    if request.method == 'POST':
+            print(request.user)
+            mf =CustomerForm(request.POST)
+            print('mf',mf)
+            if mf.is_valid():
+                user=request.user                # user variable store the current user i.e steveroger
+                name= mf.cleaned_data['name']
+                address= mf.cleaned_data['address']
+                city= mf.cleaned_data['city']
+                state= mf.cleaned_data['state']
+                pincode= mf.cleaned_data['pincode']
+                print(state)
+                print(city)
+                print(name)
+                Customer(user=user,name=name,address=address,city=city,state=state,pincode=pincode).save()
+                return redirect('address')           
+    else:
+        mf =CustomerForm()
+        address = Customer.objects.filter(user=request.user)
+        print(address)
+    return render(request,'core/address.html',{'mf':mf,'address':address})
+
+
+def delete_address(request,id):
+    if request.method == 'POST':
+        de = Customer.objects.get(pk=id)
+        de.delete()
+    return redirect('address')

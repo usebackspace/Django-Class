@@ -80,9 +80,8 @@
                             <form action="{% url "deletecart" item.id %}" method="POST">
                                     {% csrf_token %}
                                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                     <input type="submit" class="btn btn-danger btn-sm" value="d">
-
-                                    
+                                     <button type="submit" class="btn btn-danger">
+                                            <i class="fa-solid fa-trash-can"></i>                                     </button>
                                     </div>
                              </form>   
                         </div>

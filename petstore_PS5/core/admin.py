@@ -19,4 +19,4 @@ class CartAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display= ['id','user','customer','pet','quantity','order_at','status','total_price']
+    list_display= ['id','user','pet','quantity','order_at','status','total_price']

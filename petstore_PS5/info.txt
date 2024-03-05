@@ -1,3 +1,6 @@
 petstore - Phase 3
 
-1. we will work on chekout page
+1. we will add cart icon to the Navbar and also add delete icon to the cart
+
+2. we will work on address page.
+

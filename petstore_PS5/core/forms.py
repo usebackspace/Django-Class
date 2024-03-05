@@ -56,7 +56,7 @@ class CustomerForm(forms.ModelForm):
         widgets= {'name':forms.TextInput(attrs={'class':'form-control'}),
                   'address':forms.TextInput(attrs={'class':'form-control'}),
                   'city':forms.TextInput(attrs={'class':'form-control'}),
-                  'state':forms.TextInput(attrs={'class':'form-control'}),
+                  'state':forms.Select(attrs={'class':'form-control'}),
                   'pincode':forms.NumberInput(attrs={'class':'form-control'}),
                   }
         

@@ -8,6 +8,8 @@ def superman(request):
     if request.method == 'POST':
         dc =DcForm(request.POST)
         if dc.is_valid():
+            n= dc.cleaned_data['heroic_name']
+            print(n)
             dc.save()
         dc= DcForm()
         
