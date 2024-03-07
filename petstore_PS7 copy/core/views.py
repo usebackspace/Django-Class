@@ -247,8 +247,7 @@ def checkout(request):
     final_price= delhivery_charge + total
     
     address = Customer.objects.filter(user=request.user)
-  
-  #================= Paypal Code =====================
+
     paypal_checkout = {
         'business': settings.PAYPAL_RECEIVER_EMAIL,
         'amount': final_price,
@@ -262,10 +261,9 @@ def checkout(request):
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
-  #================= Paypal Code  End =====================
-
 
     return render(request, 'core/checkout.html', {'cart_items': cart_items,'total':total,'final_price':final_price,'address':address,'paypal':paypal_payment})
+
 
 
 def payment_success(request):

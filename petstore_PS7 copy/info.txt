@@ -4,10 +4,7 @@ We wil work on payment Integration
 
 1. We will install package i.e pip install django-paypal
 
-2. a. we will go to settings.py file and install "paypal.standard.ipn" into INSTALLED_APPS
-   b.  And also include 
-       path('', include('paypal.standard.ipn.urls')),
-       to the urls.py file of project folder
+2. we will go to settings.py file and install "paypal.standard.ipn" into INSTALLED_APPS
 
 3. After installing do , makemigrations and migrate
 
@@ -27,6 +24,4 @@ We wil work on payment Integration
     import uuid
     from django.urls import reverse
 
-7. Then we wil add create two function
-   1. payment_success()
-   2. payment_failed()
+7. Then we wil add create one function checkout()
