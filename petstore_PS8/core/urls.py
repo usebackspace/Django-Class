@@ -55,10 +55,13 @@ urlpatterns = [
     
     path('checkout/',views.checkout,name='checkout'),
 
-    path('payment_success/',views.payment_success,name='paymentsuccess'),
+    path('payment/',views.payment,name='payment'),
+    
+    path('payment_success/<int:selected_address_id>/<int:final_price>/',views.payment_success,name='paymentsuccess'),
 
     path('payment_failed/',views.payment_failed,name='paymentfailed'),
 
+    path('order/',views.order,name='order'),
 ]
 
 #--------- THis is will add file to media folder -----------

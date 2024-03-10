@@ -1,0 +1,16 @@
+petstore - Phase 8
+
+We will change logo of paypal 
+
+1. we will go to PayPalPaymentsForm inside that we will change image of render function
+
+    from:
+                                """<form action="{0}" method="post">
+            {1}
+            <input type="image" src="{2}" name="submit" alt="Buy it Now" />
+        </form>"""
+    To:
+                """<form action="{0}" method="post">
+            {1}
+            <input type="image" src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" name="submit" alt="Buy it Now"  width="300px" />
+        </form>"""

@@ -234,6 +234,24 @@ def delete_address(request,id):
 #===================================== Checkout ============================================
 
 def checkout(request):
+    cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of current user, and show product available in the cart of the current user.
+    total =0
+    delhivery_charge =2000
+    for item in cart_items:
+        item.product.price_and_quantity_total = item.product.discounted_price * item.quantity
+        total += item.product.price_and_quantity_total
+    final_price= delhivery_charge + total
+    
+    address = Customer.objects.filter(user=request.user)
+
+    return render(request, 'core/checkout.html', {'cart_items': cart_items,'total':total,'final_price':final_price,'address':address})
+
+
+def payment(request):
+
+    if request.method == 'POST':
+        selected_address_id = request.POST.get('selected_address')
+    print(selected_address_id)
 
     host = request.get_host()   # Will fecth the domain site is currently hosted on.
 
@@ -255,20 +273,31 @@ def checkout(request):
         'invoice': uuid.uuid4(),
         'currency_code': 'USD',
         'notify_url': f"http://{host}{reverse('paypal-ipn')}",
-        'return_url': f"http://{host}{reverse('paymentsuccess')}",
+        'return_url': f"http://{host}{reverse('paymentsuccess', args=[selected_address_id,final_price])}",
         'cancel_url': f"http://{host}{reverse('paymentfailed')}",
     }
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
 
-    return render(request, 'core/checkout.html', {'cart_items': cart_items,'total':total,'final_price':final_price,'address':address,'paypal':paypal_payment})
+    return render(request, 'core/payment.html', {'cart_items': cart_items,'total':total,'final_price':final_price,'address':address,'paypal':paypal_payment})
 
 
+def payment_success(request,selected_address_id):
+    print('payment sucess',selected_address_id)
 
-def payment_success(request):
+    user =request.user
+    customer_data = Customer.objects.get(pk=selected_address_id,)
+    cart = Cart.objects.filter(user=user)
+    for c in cart:
+        Order(user=user,customer=customer_data,pet=c.product,quantity=c.quantity).save()
+        c.delete()
     return render(request,'core/payment_success.html')
 
 
 def payment_failed(request):
     return render(request,'core/payment_failed.html')
+
+
+def order(request):
+    return render(request,'core/order.html')

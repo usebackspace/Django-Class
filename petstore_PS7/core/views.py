@@ -235,9 +235,6 @@ def delete_address(request,id):
 
 def checkout(request):
 
-    host = request.get_host()   # Will fecth the domain site is currently hosted on.
-
-    
     cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of current user, and show product available in the cart of the current user.
     total =0
     delhivery_charge =2000
@@ -249,15 +246,18 @@ def checkout(request):
     address = Customer.objects.filter(user=request.user)
   
   #================= Paypal Code =====================
+   
+    host = request.get_host()   # Will fecth the domain site is currently hosted on.
+   
     paypal_checkout = {
-        'business': settings.PAYPAL_RECEIVER_EMAIL,
-        'amount': final_price,
-        'item_name': 'Pet',
-        'invoice': uuid.uuid4(),
+        'business': settings.PAYPAL_RECEIVER_EMAIL,   #This is typically the email address associated with the PayPal account that will receive the payment.
+        'amount': final_price,    #: The amount of money to be charged for the transaction. 
+        'item_name': 'Pet',       # Describes the item being purchased.
+        'invoice': uuid.uuid4(),  #A unique identifier for the invoice. It uses uuid.uuid4() to generate a random UUID.
         'currency_code': 'USD',
-        'notify_url': f"http://{host}{reverse('paypal-ipn')}",
-        'return_url': f"http://{host}{reverse('paymentsuccess')}",
-        'cancel_url': f"http://{host}{reverse('paymentfailed')}",
+        'notify_url': f"http://{host}{reverse('paypal-ipn')}",         #The URL where PayPal will send Instant Payment Notifications (IPN) to notify the merchant about payment-related events
+        'return_url': f"http://{host}{reverse('paymentsuccess')}",     #The URL where the customer will be redirected after a successful payment. 
+        'cancel_url': f"http://{host}{reverse('paymentfailed')}",      #The URL where the customer will be redirected if they choose to cancel the payment. 
     }
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)

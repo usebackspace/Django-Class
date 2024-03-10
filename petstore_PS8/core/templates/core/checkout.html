@@ -63,91 +63,30 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 mt-3">
+                          <form method="post" action="{% url 'payment' %}">
+                                {% csrf_token %}
                                     {% for add in address %}
                                     <label >
                                         <div class="card flex-md-row mb-4 box-shadow h-md-250 mt-4 ml-4">
                                             <div class="card-body d-flex flex-column align-items-start">
                                                 <h3 class="mb-0">
-                                                    <input type="radio" name="address" value="{{ add.id }}">
+                                                    <input type="radio" name="selected_address" value="{{ add.id }}">
                                                 Name: {{add.name}}
                                             </h3>
                                             <p class="card-text mb-auto">Address:{{add.address}} </p>
                                             <p class="card-text mb-auto">City:{{add.city}} </p>
                                             <p class="card-text mb-auto">State: {{add.state}} </p>
-                                            <p class="card-text mb-auto">Pincode:{{add.pincode}} </p>
-                                            <form action="{% url "deleteaddress" add.id %}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                <input type="submit" class="btn btn-danger btn-sm mt-2" value="Delete Address">
-                                                </div>
-                                            </form>   
+                                            <p class="card-text mb-auto">Pincode:{{add.pincode}} </p> 
                                             </div>
                                         </div>
                                     </label>
                                     {% endfor %}
+                                       <input type="submit" class="btn btn-primary" value="Proceed to Payment">
+                            </form>
                         </div>
                     </div>
                 </div>
         </div>
-    </div>
-<!--================================= Payment Start Here==============================================-->
-    <div class="row">
-      {{paypal.render}}
-
-        {% comment %} <form class="needs-validation" novalidate="">
-            <h4 class="mb-3">Payment</h4>
-
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                <label class="custom-control-label" for="credit">Credit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                <label class="custom-control-label" for="paypal">Paypal</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                <small class="text-muted">Full name as displayed on card</small>
-                <div class="invalid-feedback">
-                  Name on card is required
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                <div class="invalid-feedback">
-                  Expiration date required
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                <div class="invalid-feedback">
-                  Security code required
-                </div>
-              </div>
-            </div>
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-          </form> {% endcomment %}
-    </div>
+      </div>
 </div>
-
 {% endblock content %}

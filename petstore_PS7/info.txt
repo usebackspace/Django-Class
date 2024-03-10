@@ -1,4 +1,4 @@
-petstore - Phase 6
+petstore - Phase 7
 
 We wil work on payment Integration
 
@@ -11,14 +11,15 @@ We wil work on payment Integration
 
 3. After installing do , makemigrations and migrate
 
-4. Then Again we have to go in settings.py file and to have following settings
+4. Then we have to create paypal account,
+   1. One for merchant account where money is going to be received.
+   2. We will create personal account from which we will pay for for the product.
+
+5. Then Again we have to go in settings.py file and to have following settings
 
     PAYPAL_RECEIVER_EMAIL = 'sb-pbeov29792521@business.example.com' # where cash is paid into i.e Merchant receiver mail
     PAYPAL_TEST = True
 
-5. Then we have to create paypal account,
-   1. One for merchant account where money is going to be received.
-   2. We will create personal account from which we will pay for for the product.
 
 6. Then we will import some settings in our views.py file
 
