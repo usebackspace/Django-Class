@@ -194,6 +194,7 @@
 
 {% block content %}
 
+{% for o in ord %}
 <div class="order">
         <div class="card">
             <div class="title">Purchase Reciept</div>
@@ -212,10 +213,10 @@
             <div class="pricing">
                 <div class="row">
                     <div class="col-9">
-                        <span id="name">BEATS Solo 3 Wireless Headphones</span>  
+                        <span id="name">{{o.pet.name}}</span>  
                     </div>
                     <div class="col-3">
-                        <span id="price">&pound;299.99</span>
+                        <span id="price">₹ {{o.pet.discounted_price}}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -223,7 +224,7 @@
                         <span id="name">Shipping</span>
                     </div>
                     <div class="col-3">
-                        <span id="price">&pound;33.00</span>
+                        <span id="price">₹ 2000</span>
                     </div>
                 </div>
             </div>
@@ -236,16 +237,38 @@
             <div class="tracking">
                 <div class="title">Tracking Order</div>
             </div>
-            <div class="progress-track">
+
+            {% if o.status == 'PENDING' %}
+            <div class="progress-track ml-5">
                 <ul id="progressbar">
-                    <li class="step0 active " id="step1">Ordered</li>
-                    <li class="step0 active text-center" id="step2">Shipped</li>
-                    <li class="step0 active text-right" id="step3">On the way</li>
-                    <li class="step0 text-right" id="step4">Delivered</li>
+                    <li class="step0 active " id="step1">Pending</li>
+                    <li class="step0  text-center" id="step2">Processing</li>
+                    <li class="step0  text-right" id="step3">Completed</li>
                 </ul>
             </div>
-            
+            {% endif %}
 
+            {% if o.status == 'PROCESSING' %}
+            <div class="progress-track ml-5">
+                <ul id="progressbar">
+                    <li class="step0 active " id="step1">Pending</li>
+                    <li class="step0 active text-center" id="step2">Processing</li>
+                    <li class="step0  text-right" id="step3">Completed</li>
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if o.status == 'COMPLETED' %}
+            <div class="progress-track ml-5">
+                <ul id="progressbar">
+                    <li class="step0 active " id="step1">Pending</li>
+                    <li class="step0 active text-center" id="step2">Processing</li>
+                    <li class="step0 active text-right" id="step3">Completed</li>
+                </ul>
+            </div>
+            {% endif %}
+
+        {% endfor %}
             <div class="footer">
                 <div class="row">
                     <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/YBWc55P.png"></div>

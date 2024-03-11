@@ -84,82 +84,24 @@
                                             <i class="fa-solid fa-trash-can"></i>                                     </button>
                                     </div>
                              </form>   
-                        </div>
-                    </div>
-                    </div>
-               {% endfor %}
-
-<!-- ====================== Order Summmary =======================================-->
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card ">
-                                <div class="card-header">
-                                    <h3 class="text-xs-center"><strong>Order summary</strong></h3>
-                                </div>
-                                <div class="card-block">
-                                    <div class="table-responsive">
-                                        <table class="table table-sm">
-                                            <thead>
-                                                <tr>
-                                                    <td><strong>Pet Name</strong></td>
-                                                    <td class="text-xs-center"><strong>Pet Price</strong></td>
-                                                    <td class="text-xs-center"><strong>Pet Quantity</strong></td>
-                                                    <td class="text-xs-right"><strong>Total</strong></td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for item in cart_items %}
-                                                <tr>
-                                                    <td>{{item.product.name}}</td>
-                                                    <td class="text-xs-center">₹{{item.product.discounted_price}}</td>
-                                                    <td class="text-xs-center">{{item.quantity}}</td>
-                                                    <td class="text-xs-right">₹{{item.product.price_and_quantity_total}}</td>
-                                                </tr>
-                                                {% endfor %}
-                                                <tr>
-                                                    <td class="highrow"></td>
-                                                    <td class="highrow"></td>
-                                                    <td class="highrow text-xs-center"><strong>Subtotal</strong></td>
-                                                    <td class="highrow text-xs-right">₹<b>{{total}}</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="emptyrow"></td>
-                                                    <td class="emptyrow"></td>
-                                                    <td class="emptyrow text-xs-center"><strong>Shipping</strong></td>
-                                                    <td class="emptyrow text-xs-right">₹2000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
-                                                    <td class="emptyrow"></td>
-                                                    <td class="emptyrow text-xs-center"><strong>Total</strong></td>
-                                                    <td class="emptyrow text-xs-right">₹<b>{{final_price}}</b></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <br>
-
-<!-- ====================== Order Summmary End ======================================= -->
-                <a href="{% url "checkout" %}">
-                    <div class="card">
-                        <div >
-                            <button type="button" class="btn btn-success btn-block btn-lg">Proceed to Pay</button>
+                    {% endfor %}
+                    
+                    <a href="{% url "checkout" %}">
+                        <div class="card">
+                            <div >
+                                <button type="button" class="btn btn-success btn-block btn-lg">Proceed to Pay</button>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                </div>
+                    </a>
                 </div>
             </div>
-            </section>
         </div>
-      </div>
+    </section>
+</div>
+</div>
     </div>
 
 {% endblock content %}

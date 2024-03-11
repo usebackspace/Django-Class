@@ -57,7 +57,7 @@ urlpatterns = [
 
     path('payment/',views.payment,name='payment'),
     
-    path('payment_success/<int:selected_address_id>/<int:final_price>/',views.payment_success,name='paymentsuccess'),
+    path('payment_success/<int:selected_address_id>/',views.payment_success,name='paymentsuccess'),
 
     path('payment_failed/',views.payment_failed,name='paymentfailed'),
 

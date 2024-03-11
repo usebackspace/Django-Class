@@ -246,16 +246,15 @@ def checkout(request):
 
     return render(request, 'core/checkout.html', {'cart_items': cart_items,'total':total,'final_price':final_price,'address':address})
 
+#===================================== Payment ============================================
 
 def payment(request):
 
     if request.method == 'POST':
         selected_address_id = request.POST.get('selected_address')
-    print(selected_address_id)
 
     host = request.get_host()   # Will fecth the domain site is currently hosted on.
 
-    
     cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of current user, and show product available in the cart of the current user.
     total =0
     delhivery_charge =2000
@@ -266,6 +265,7 @@ def payment(request):
     
     address = Customer.objects.filter(user=request.user)
 
+#=============================== Paypal Code ===============================================
     paypal_checkout = {
         'business': settings.PAYPAL_RECEIVER_EMAIL,
         'amount': final_price,
@@ -273,19 +273,20 @@ def payment(request):
         'invoice': uuid.uuid4(),
         'currency_code': 'USD',
         'notify_url': f"http://{host}{reverse('paypal-ipn')}",
-        'return_url': f"http://{host}{reverse('paymentsuccess', args=[selected_address_id,final_price])}",
+        'return_url': f"http://{host}{reverse('paymentsuccess', args=[selected_address_id])}",
         'cancel_url': f"http://{host}{reverse('paymentfailed')}",
     }
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
-
+#==========================================================================================================
     return render(request, 'core/payment.html', {'cart_items': cart_items,'total':total,'final_price':final_price,'address':address,'paypal':paypal_payment})
 
+#===================================== Payment Success ============================================
 
 def payment_success(request,selected_address_id):
-    print('payment sucess',selected_address_id)
-
+    print('payment sucess',selected_address_id)   # we have fetch this id from return_url': f"http://{host}{reverse('paymentsuccess', args=[selected_address_id])}
+                                                  # This id contain address detail of particular customer
     user =request.user
     customer_data = Customer.objects.get(pk=selected_address_id,)
     cart = Cart.objects.filter(user=user)
@@ -295,9 +296,14 @@ def payment_success(request,selected_address_id):
     return render(request,'core/payment_success.html')
 
 
+#===================================== Payment Failed ============================================
+
+
 def payment_failed(request):
     return render(request,'core/payment_failed.html')
 
+#===================================== Order ====================================================
 
 def order(request):
-    return render(request,'core/order.html')
+    ord=Order.objects.filter(user=request.user)
+    return render(request,'core/order.html',{'ord':ord})
