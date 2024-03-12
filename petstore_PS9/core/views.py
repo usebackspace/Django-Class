@@ -251,7 +251,7 @@ def checkout(request):
 def payment(request):
 
     if request.method == 'POST':
-        selected_address_id = request.POST.get('selected_address')
+        selected_address_id = request.POST.get('selected_address')  # This will fetch value from radio button in which selected_addres contains value {{add.id}}, which will fetch value of customer id
 
 
     cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of current user, and show product available in the cart of the current user.
