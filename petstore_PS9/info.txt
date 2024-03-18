@@ -2,7 +2,7 @@ petstore - Phase 9
 
 1. We will work on Buy Now button
 
-2. In this phase we have 3 functions
+2. In this phase we have added 3 functions
     1.buynow()
     2.buynow_payment()
     3.buynow_payment_success()
