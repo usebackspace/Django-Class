@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Session</h1>
+    <h2>{{name}}</h2>
+    <h2>{{key}}</h2>
+    <h2>{{items}}</h2>
+
+   
+
+    {{request.session.get_session_cookie_age}}<br>  <!-- Gives us Bydefault expiry date of cookie-->
+    {{request.session.get_expiry_age}}<br>        <!-- Gives us expiry age when we set the expiry age of the cookie-->
+    {{request.session.get_expiry_date}}<br>
+    {{request.session.get_expire_at_browser_close}}<br>
+</body>
+</html>
