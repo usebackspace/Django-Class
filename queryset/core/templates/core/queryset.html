@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td,th{
+            border: 2px solid black;
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1> Query Set API </h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for q in query  %}
+        <tr>
+            <td>{{q.id}}</td>
+            <td>{{q.name}}</td>
+            <td>{{q.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
