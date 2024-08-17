@@ -1,0 +1,683 @@
+/* ================= Background CSS ======================== */
+/* Body background with gradient */
+body {
+    background: linear-gradient(135deg, #ffe02f, #ff5c20);
+    transition: background 0.5s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+/* =================== Navbar CSS ========================= */
+/* Custom Navbar Styles */
+.navbar-custom {
+  background: linear-gradient(135deg, #FFD700, #FF4500);
+  /* Gradient Background */
+  padding: 15px;
+  transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: bold;
+  color: #fff;
+  transition: color 0.3s;
+}
+.navbar-custom .nav-user {
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: #FF4500;
+}
+
+.navbar-custom .nav-link {
+  color: #fff;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  color: #fff;
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #ffd700;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .dropdown-item {
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: #ff4500;
+  color: #fff;
+}
+
+.custom-search-bar {
+  border-radius: 20px;
+  border: 1px solid #fff;
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 992px) {
+  .navbar-custom {
+    padding: 10px;
+  }
+
+  .custom-search-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-custom {
+    padding: 8px;
+  }
+
+  .navbar-custom .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
+
+/* ======================== Carousel CSS ============================ */
+
+/* Carousel Styles */
+
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark overlay */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.carousel-caption .btn-custom {
+  background-color: #FFD700;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carousel-caption .btn-custom:hover {
+  background-color: #FF4500;
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .carousel-caption {
+    bottom: 10%;
+  }
+}
+
+/* Responsive Carousel Image */
+.carousel-item img {
+  width: 100%;
+  /* Full width */
+  height: auto;
+  /* Adjust height proportionally */
+  object-fit: cover;
+  /* Ensures the image covers the container without stretching */
+  max-height: 600px;
+  /* Limits the height of the image */
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 400px;
+    /* Adjust max height for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    max-height: 300px;
+    /* Further adjust for very small screens */
+  }
+}
+
+/* =============== Image card Css ================== */
+
+
+.pet-cat {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  color: #fff;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+
+.pet-cat:hover {
+  color: #FF4500;
+}
+
+/* Card Deck Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+/* Individual Card Styling */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image Styling */
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 200px;
+}
+
+/* Card Body Styling */
+.card-body {
+  background-color: #f8f9fa;
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Card Text */
+.card-text {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card-deck {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+/* Link Styling */
+.card-img-href {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.card-img-href:hover {
+  color: #fbb034;
+}
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+/* ================ Featurette CSS ======================= */
+
+/* Featurette Section */
+.featurette-divider {
+  border-top: 1px solid #ddd;
+  margin: 3rem 0;
+}
+
+/* Featurette Text */
+.featurette-heading {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.featurette-heading:hover {
+  color: #FF4500;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #160802;
+}
+
+/* Featurette Image */
+.featurette-image {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featurette-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .featurette {
+    flex-direction: column;
+  }
+
+  .featurette-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .featurette-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+/* =================== Footer CSS ========================= */
+/* Footer Styling */
+footer {
+  background: linear-gradient(135deg, #FFD700);
+  padding: 2rem 0;
+  color: #fff;
+}
+
+footer h5 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #ffffff;
+}
+
+footer img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer small {
+  color: #fff;
+}
+
+.border-top {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+
+  footer .col-md {
+    margin-bottom: 1.5rem;
+  }
+
+  footer img {
+    margin: 0 auto;
+  }
+}
+
+
+/* ================== About Page CSS ================= */
+
+/* =================== About Us Section =================== */
+
+.container.about {
+  padding: 2rem;
+  background: linear-gradient(135deg, #FFD700);
+  /* Light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading_about h1,
+.mission h1,
+.ourstory h1,
+.apart h1,
+.commitment h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #FF4500;
+  /* Darker color for headings */
+  transition: color 0.3s ease;
+}
+
+.heading_about h1:hover,
+.mission h1:hover,
+.ourstory h1:hover,
+.apart h1:hover,
+.commitment h1:hover {
+  color: #FF4500;
+  /* Highlight color on hover */
+}
+
+.para,
+.mission_para,
+.ourstory_Para,
+.apart_para,
+.commitment_para {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #160802;
+  /* Dark gray for text */
+  margin-bottom: 1.5rem;
+}
+
+.para,
+.mission_para,
+.ourstory_Para,
+.apart_para,
+.commitment_para {
+  background: linear-gradient(135deg, #FFD700);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.para {
+  margin-bottom: 2rem;
+}
+
+.mission,
+.ourstory,
+.apart,
+.commitment {
+  margin-top: 2rem;
+}
+
+
+/* ==================== Dog Category Filter Option ================== */
+.dog-container {
+  margin-top: 6%;
+}
+
+/* filter-title Text */
+.filter-title {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  color: #FF4500;
+  transition: color 0.3s ease;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.filter-option {
+  margin-left: 15%;
+  font-size: 1rem;
+}
+
+.filter-column {
+  border-right: 1px solid #ffab8c;
+}
+
+/* Style the checkbox */
+.filter-option input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filter-option input[type="checkbox"]:checked {
+  background-color: #FF4500;
+  border-color: #007bff;
+  color: white;
+}
+
+.filter-option input[type="checkbox"]:checked::after {
+  content: '\2714';
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+/* Style the radio button */
+.filter-option input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.filter-option input[type="radio"]:checked {
+  border-color: #007bff;
+  background-color: #FF4500;
+}
+
+.filter-option input[type="radio"]:checked::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Sort Options */
+.sort-options {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+.sort-by {
+  font-size: 1.5rem;
+  color: #663399;
+}
+
+.sort-options .form-control {
+  width: auto;
+  max-width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .filter-column {
+    border-right: none; /* Remove border on smaller screens */
+  }
+
+  .filter-option {
+    margin-left: 5%;
+    font-size: 0.9rem;
+  }
+
+  .filter-title {
+    font-size: 1.5rem;
+    margin-left: 5%;
+  }
+
+  .sort-options {
+    width: 70%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .sort-options .form-control {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-column {
+    margin-bottom: 2%;
+    border-right: none;
+  }
+
+  .filter-option {
+    margin-left: 0;
+    margin-bottom: 1%;
+    font-size: 0.8rem;
+  }
+
+  .filter-title {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+
+  .sort-options {
+    width: 70%;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+}
+
+
+.sort-options {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  width: 100%; /* Full width */
+  max-width: 100%; /* Ensures it doesn't exceed container width */
+  margin-bottom: 20px; /* Adds some space below */
+  padding-right: 15px; /* Optional: Adds padding to the right */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.sort-by {
+  font-size: 1.5rem;
+  color: #663399;
+  margin-right: 10px; /* Space between label and dropdown */
+}
+
+.sort-options .form-control {
+  flex-grow: 1; /* Allows the dropdown to grow */
+  max-width: 200px; /* Set a maximum width for the dropdown */
+  min-width: 150px; /* Set a minimum width for the dropdown */
+}
+
+@media (max-width: 768px) {
+  .sort-options {
+    flex-direction: column; /* Stacks elements vertically on small screens */
+    align-items: flex-start; /* Aligns items to the start */
+    padding-right: 0; /* Removes right padding on small screens */
+  }
+
+  .sort-by {
+    margin-right: 0; /* Removes margin on small screens */
+    margin-bottom: 10px; /* Adds space below label on small screens */
+  }
+
+  .sort-options .form-control {
+    width: 70%; /* Full width on small screens */
+    max-width: none; /* Removes max-width on small screens */
+  }
+}
+
+/* General Styles for Sort Options */
+.sort-options {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  width: 100%; /* Full width */
+  margin-bottom: 20px; /* Adds some space below */
+  padding-right: 15px; /* Padding to the right for spacing */
+  box-sizing: border-box; /* Includes padding in the width */
+}
+
+.sort-by {
+  font-size: 1.5rem;
+  color: #663399;
+  margin-right: 10px; /* Space between label and dropdown */
+}
+
+.sort-options .form-control {
+  max-width: 200px; /* Sets a max width for the dropdown */
+  min-width: 150px; /* Sets a min width for the dropdown */
+  width: auto; /* Ensures the dropdown adjusts within the max/min width */
+}
+
