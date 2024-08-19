@@ -1,9 +1,9 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<div class="container register">
+<div class="container register login-page">
     <div class="register-heading ">
-        <h2 class="mb-3 text-primary">Please Login</h2>
+        <h2 class="mb-3 text-danger">Please Login</h2>
     </div>
    <form action="" method="POST" novalidate>
         {% csrf_token %}
@@ -16,9 +16,10 @@
         <input type="submit" value="Login" class="btn btn-success register-button">
         </div>
     </form>
-</div>
-<div class="text-center mt-3">
-    <a href="{% url "forgotpassword" %}"><p>forgot password?</p></a> 
+    <div class="text-center mt-3 reg">
+        <a href="{% url "registration" %}" > Register Here </a> 
+        <a href="{% url "forgotpassword" %}"> forgot password?</a> 
+    </div>
 </div>
 
 {% endblock content %}

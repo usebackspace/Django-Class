@@ -15,13 +15,13 @@
                 <h1 class="jumbotron-heading text-center text-danger">{{pet.name}}</h1>
                 <p class="lead text-center">{{pet.small_description}}</p>
                     <div class="text-center">
-                        <h4 class="font-weight-bold"><i class="fa-solid fa-indian-rupee-sign"></i>{{pet.discounted_price}} <small class="fw-light rupee">{{pet.selling_price}}</small> <small class="text-danger">({{percentage}}% off)</small></h4> 
-                        <a href="{% url 'addtocart' pet.id %}" class="btn btn-info my-2 mr-2">Add to cart</a>    <!-- when we will click on add to cart button, addtocart url will be called along with id of particular pet, then particular pet id will be send to the add_to_cart() in views -->
-                        <a href="{% url "buynow" pet.id %}" class="btn btn-success my-2">Buy Now</a>
+                        <h4 class="font-weight-bold pet-discounted-price"><i class="fa-solid fa-indian-rupee-sign text-danger"></i>  {{pet.discounted_price}} <s class="text-warning"> <small class="fw-light rupee text-danger"> {{pet.selling_price}}  </small> </s><small class="text-danger">({{percentage}}% off)</small></h4> 
+                        <a href="{% url 'addtocart' pet.id %}" class="btn btn-danger my-2 mr-2 add-to-cart">Add to cart</a>    <!-- when we will click on add to cart button, addtocart url will be called along with id of particular pet, then particular pet id will be send to the add_to_cart() in views -->
+                        <a href="{% url "buynow" pet.id %}" class="btn btn-warning my-2 buy-now"> Buy Now</a>
                     </div>
                 <div class="description">
-                <h2 class="jumbotron-heading mt-5">Description</h2>
-                    {{pet.description}}
+                <h2 class="jumbotron-heading mt-5 pet-description-heading">Description</h2>
+                   <div class="pet-description">{{pet.description}}</div> 
                 </div>
             </div>
         </div>

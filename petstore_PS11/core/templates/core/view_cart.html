@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<div class="container-fluid profile">
+<div class="container-fluid profile view-cart view-cart-right-side-bar">
       <div class="row">
         <div class="col-md-2 d-none d-md-block sidebar" >
             <nav >
@@ -48,7 +48,7 @@
                 <div class="col-10">
 
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-normal mb-0 text-black text-primary">Shopping Cart</h3>
+                    <h3 class="fw-normal mb-0 text-black text-danger">Shopping Cart</h3>
                     </div>
                 {% for item in cart_items %}
 
@@ -61,7 +61,7 @@
                                 class="img-fluid rounded-3" alt="Cotton T-shirt">
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">{{item.product.name}}</p> <!-- item.product.name = cart_items will hold all object from cart of current user , item variable will hold one object from cart_items and render on view_cart.html -->
+                                <p class="lead fw-normal text-danger mb-2">{{item.product.name}}</p> <!-- item.product.name = cart_items will hold all object from cart of current user , item variable will hold one object from cart_items and render on view_cart.html -->
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                 <button class="btn btn-link px-2">
@@ -75,7 +75,7 @@
                                 </button>
                             </div>
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1 ">
-                                <h5 class="mb-0">₹{{item.product.discounted_price}}</h5>
+                                <h5 class="mb-0 text-danger">₹{{item.product.discounted_price}}</h5>
                             </div>
                             <form action="{% url "deletecart" item.id %}" method="POST">
                                     {% csrf_token %}
@@ -89,12 +89,11 @@
                     </div>
                     {% endfor %}
                     
-                    <a href="{% url "checkout" %}">
-                        <div class="card">
+                    <a href="{% url "checkout" %}" >
                             <div >
-                                <button type="button" class="btn btn-success btn-block btn-lg">Proceed to Pay</button>
+                                <button type="button" class="btn btn-success btn-block btn-lg proceed-to-pay ">Proceed to Pay</button>
                             </div>
-                        </div>
+                        
                     </a>
                 </div>
             </div>
@@ -102,7 +101,6 @@
     </section>
 </div>
 </div>
-    </div>
 
 {% endblock content %}
 

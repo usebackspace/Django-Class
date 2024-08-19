@@ -68,6 +68,9 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.search-bar{
+  width: 20%;
+}
 @media (max-width: 992px) {
   .navbar-custom {
     padding: 10px;
@@ -395,7 +398,6 @@ footer small {
 }
 
 
-/* ================== About Page CSS ================= */
 
 /* =================== About Us Section =================== */
 
@@ -681,3 +683,327 @@ footer small {
   width: auto; /* Ensures the dropdown adjusts within the max/min width */
 }
 
+/* ========================== Dog Categories CSS ============================ */
+
+.dog-name{
+  color:#FF4500
+}
+
+.dog-discounted-price{
+  color: #663399;
+}
+
+
+/* ===================== Pet Details CSS ================== */
+
+.petdetails{
+  margin-top: 8%;
+
+}
+
+.pet-discounted-price{
+  color: #663399;
+}
+
+
+.pet-description-heading {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  color: #FF4500;
+}
+
+.pet-description{
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  color: #3b1404
+}
+
+.add-to-cart{
+  background-color: #FF4500;
+}
+.add-to-cart:hover{
+ background-color: #fcdb1e;
+}
+
+.buy-now{
+  background-color: #fcdb1e;
+}
+.buy-now:hover{
+  background-color: #FF4500;
+}
+
+
+/* ======================== Login Page CSS ====================== */
+/* Container Padding */
+.register {
+  padding: 50px 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Heading Styling */
+.register-heading h2 {
+  font-size: 2rem;
+  color: #007bff;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form Group Margin */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+.register .form-control {
+  border: 2px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Input Fields Focus State */
+.register .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button Styling */
+.register-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Submit Button Hover State */
+.register-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Forgot Password Link Styling */
+a p {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a p:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .register {
+    padding: 30px 10px;
+  }
+
+  .register-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .register-button {
+    font-size: 1.1rem;
+  }
+}
+
+
+/*========================Register And Login Page CSS ========================== */
+
+/* Container Padding */
+.register {
+  padding: 50px 15px;
+  background: linear-gradient(135deg, #ffe02f, #ff5c20);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+    /* Blur effect */
+}
+
+/* Heading Styling */
+.register-heading h2 {
+  font-size: 2rem;
+  color: #FF4500;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form Group Margin */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+.register .form-control {
+  border: 2px solid #FF4500;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Input Fields Focus State */
+.register .form-control:focus {
+  border-color: #FF4500;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button Styling */
+.register-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: 50%;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  background-color: #fbb034;
+  color: #FF4500;
+}
+
+/* Submit Button Hover State */
+.register-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Forgot Password Link Styling */
+a p {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a p:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .register {
+    padding: 30px 10px;
+  }
+
+  .register-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .register-button {
+    font-size: 1.1rem;
+  }
+}
+
+.login-page{
+  margin-top: 10%;
+}
+.register-page{
+  margin-top: 7%;
+}
+
+.register .reg a{
+  color: #FFf;
+  font-size: 1.3rem;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+
+/* ========================== View Cart CSS ============================ */
+
+/* General Styles */
+.profile {
+  background: #f8f9fa;
+}
+
+.sidebar {
+  padding: 1rem;
+  border-right: 2px solid #fcdb1e;
+}
+
+.sidebar .nav-link {
+  color: #FF4500;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1.3rem;
+  margin-top: 4%;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.card {
+  background: linear-gradient(135deg, #ffe02f, #ff5c20);
+  border: none;
+  border-radius: 10px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.cart-item {
+  background: linear-gradient(135deg, #ffe02f, #ff5c20);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.checkout-card {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  border-radius: 10px;
+  padding: 1rem;
+  color: #ffffff;
+}
+
+.btn-success {
+  background-color: #FFD700;
+  border-color: #FF4500;
+  color: #160802;
+  font-size: 1.3rem;
+}
+
+.btn-success:hover {
+  background-color: #FF4500;
+  border-color: #FFD700;
+  text-decoration: none;
+}
+
+.view-cart{
+  margin-top: 5%;
+}
+
+.view-cart-right-side-bar{
+  background: linear-gradient(135deg, #ffe02f, #ff5c20);
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+    /* Hide sidebar on small screens */
+  }
+
+  .col-md-10 {
+    margin-left: 0;
+  }
+
+  .cart-item,
+  .checkout-card {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block;
+  }
+}
