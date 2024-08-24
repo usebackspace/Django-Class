@@ -213,6 +213,30 @@ def delete_cart(request,id):
 
 #===================================== Address ============================================
 
+def add_address(request):
+    if request.method == 'POST':
+            print(request.user)
+            mf =CustomerForm(request.POST)
+            print('mf',mf)
+            if mf.is_valid():
+                user=request.user                # user variable store the current user i.e steveroger
+                name= mf.cleaned_data['name']
+                address= mf.cleaned_data['address']
+                city= mf.cleaned_data['city']
+                state= mf.cleaned_data['state']
+                pincode= mf.cleaned_data['pincode']
+                print(state)
+                print(city)
+                print(name)
+                Customer(user=user,name=name,address=address,city=city,state=state,pincode=pincode).save()
+                return redirect('address')           
+    else:
+        mf =CustomerForm()
+        address = Customer.objects.filter(user=request.user)
+    return render(request,'core/add_address.html',{'mf':mf,'address':address})
+
+#===================================== Address ============================================
+
 def address(request):
     if request.method == 'POST':
             print(request.user)

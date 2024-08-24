@@ -37,6 +37,8 @@ urlpatterns = [
 
     path('address/',views.address,name='address'),
 
+    path('add_address/',views.add_address,name='addaddress'),
+
     path('delete_address/<int:id>',views.delete_address,name='deleteaddress'),
 
     path('logout/',views.log_out, name="logout"),

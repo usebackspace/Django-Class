@@ -209,7 +209,6 @@ body {
 
 /* Individual Card Styling */
 .card {
-  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -231,7 +230,7 @@ body {
 .card-body {
   background-color: #f8f9fa;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 /* Card Text */
@@ -240,6 +239,9 @@ body {
   color: #555;
 }
 
+.container .card-deck a{
+  text-decoration: none;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .card-deck {
@@ -694,7 +696,7 @@ footer small {
 }
 
 
-/* ===================== Pet Details CSS ================== */
+/* ========================= Pet Details CSS ===================== */
 
 .petdetails{
   margin-top: 8%;
@@ -794,11 +796,12 @@ footer small {
 a p {
   color: #007bff;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 a p:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Responsive Adjustments */
@@ -867,23 +870,26 @@ a p:hover {
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
   background-color: #fbb034;
   color: #FF4500;
+  text-decoration: none;
 }
 
 /* Submit Button Hover State */
 .register-button:hover {
   background-color: #218838;
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 /* Forgot Password Link Styling */
 a p {
   color: #007bff;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 a p:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Responsive Adjustments */
@@ -913,6 +919,7 @@ a p:hover {
   font-size: 1.3rem;
   padding-right: 5%;
   padding-left: 5%;
+  text-decoration: none;
 }
 
 
@@ -1005,5 +1012,127 @@ a p:hover {
 @media (min-width: 768px) {
   .sidebar {
     display: block;
+  }
+}
+
+
+/* ============================= Profile Page =========================== */
+
+/* Profile form container styles */
+.profile-form {
+  background: linear-gradient(135deg, #ffe02f, #ff5c20);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+  width: 60%;
+}
+
+/* Form group margin */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.profile{
+  padding-bottom: 7%;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    min-height: auto;
+  }
+
+  .profile-form {
+    margin-top: 20px;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+  }
+
+  .sidebar-sticky {
+    position: relative;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
+
+  .profile-form {
+    margin-top: 20px;
+  }
+}
+
+
+/* ====================== Address Page CSS =================== */
+
+.add-address{
+  margin-left: 100%;
+  font-size: 1.3rem;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+.add-address:hover{
+  background-color: green;
+  border-radius: 5px;
+  color: #fcdb1e;
+}
+
+.address-detail{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Make the profile and address sections responsive */
+@media (max-width: 767px) {
+  .sidebar {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .profile .row {
+    flex-direction: column;
+  }
+
+  .col-md-2,
+  .col-md-8,
+  .col-sm-6 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .btn-warning {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) and (max-width: 992px) {
+
+  .col-md-2,
+  .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    margin: 0 auto;
   }
 }

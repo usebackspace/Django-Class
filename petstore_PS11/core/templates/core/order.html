@@ -2,15 +2,10 @@
 
 {% block css %}
 <style>
-    body{
-        background: #ddd3;
-        vertical-align: bottom;
-        font-family: Muli;
-        font-size: 14px;    
-    }
+
     .card{
         margin: auto;
-        width: 38%;
+        width: 100%;
         max-width:600px;
         padding: 4vh 0;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -61,26 +56,7 @@
     .total .col-3{
         padding: 0;
     }
-    .footer{
-        padding: 0 8%;
-        font-size: x-small;
-        color: black;
-    }
-    .footer img{
-        height: 5vh;
-        opacity: 0.2;
-    }
-    .footer a{
-        color: rgb(252, 103, 49);
-    }
-    .footer .col-10, .col-2{
-        display: flex;
-        padding: 3vh 0 0;
-        align-items: center;
-    }
-    .footer .row{
-        margin: 0;
-    }
+
     #progressbar {
         margin-bottom: 3vh;
         overflow: hidden;
@@ -158,6 +134,7 @@
     }
     .progress-track{
         padding: 0 8%;
+        color:green;
     }
     #progressbar li:nth-child(2):after {
         margin-right: auto;
@@ -185,100 +162,201 @@
         background: rgb(252, 103, 49);
     }
     .order{
-        margin-top:100px;
+        margin-top:3%;
+    }
+    .title{
+        font-size:1.6rem;
+    }
+
+    #progressbar #step1{
+        font-size:1.2rem;
+    
+    }
+    #progressbar #step2{
+        font-size:1.2rem;
+    
+    }
+    #progressbar #step3{
+        font-size:1.2rem;
+    
     }
 </style>
 
 {% endblock css %}
 
-
 {% block content %}
 
-{% for o in ord %}
-<div class="order">
-        <div class="card">
-            <div class="title">Purchase Reciept</div>
-            <div class="info">
-                <div class="row">
-                    <div class="col-7">
-                        <span id="heading">Date</span><br>
-                        <span id="details">{{o.order_at}}</span>
-                    </div>
-                    <div class="col-5 pull-right">
-                        <span id="heading">Order No.</span><br>
-                        <span id="details">012j1gvs356c</span>
-                    </div>
-                </div>      
-            </div>      
-            <div class="pricing">
-                <div class="row">
-                    <div class="col-9">
-                        <span id="name">{{o.pet.name}}</span>  
-                    </div>
-                    <div class="col-3">
-                        <span id="price">₹ {{o.pet.discounted_price}}</span>
-                    </div>
+<div class="container-fluid profile view-cart view-cart-right-side-bar">
+    <div class="row">
+        <div class="col-md-2 d-none d-md-block sidebar">
+            <nav>
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url "profile" %}">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-home"><path
+                                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline
+                                        points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                Dashboard <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                                href="{% url "changepassword" %}">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-home"><path
+                                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline
+                                        points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                Change Password <span
+                                    class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url "order" %}">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-file"><path
+                                        d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline
+                                        points="13 2 13 9 20 9"></polyline></svg>
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "viewcart" %}">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-shopping-cart"><circle
+                                        cx="9" cy="21" r="1"></circle><circle
+                                        cx="20" cy="21" r="1"></circle><path
+                                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                Cart
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "address" %}">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-users"><path
+                                        d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle
+                                        cx="9" cy="7" r="4"></circle><path
+                                        d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path
+                                        d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                Address
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col-9">
-                        <span id="name">Shipping</span>
-                    </div>
-                    <div class="col-3">
-                        <span id="price">₹ 2000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="total">
-                <div class="row">
-                    <div class="col-9"></div>
-                    <div class="col-3"><big>{{o.pet.discounted_price|add:2000}}</big></div>
-                </div>
-            </div>
-            <div class="tracking">
-                <div class="title">Tracking Order</div>
-            </div>
-
-            {% if o.status == 'PENDING' %}
-            <div class="progress-track ml-5">
-                <ul id="progressbar">
-                    <li class="step0 active " id="step1">Pending</li>
-                    <li class="step0  text-center" id="step2">Processing</li>
-                    <li class="step0  text-right" id="step3">Completed</li>
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if o.status == 'PROCESSING' %}
-            <div class="progress-track ml-5">
-                <ul id="progressbar">
-                    <li class="step0 active " id="step1">Pending</li>
-                    <li class="step0 active text-center" id="step2">Processing</li>
-                    <li class="step0  text-right" id="step3">Completed</li>
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if o.status == 'COMPLETED' %}
-            <div class="progress-track ml-5">
-                <ul id="progressbar">
-                    <li class="step0 active " id="step1">Pending</li>
-                    <li class="step0 active text-center" id="step2">Processing</li>
-                    <li class="step0 active text-right" id="step3">Completed</li>
-                </ul>
-            </div>
-            {% endif %}
-
-        {% endfor %}
-            <div class="footer">
-                <div class="row">
-                    <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/YBWc55P.png"></div>
-                    <div class="col-10">Want any help? Please &nbsp;<a> contact us</a></div>
-                </div>
-                
-               
-            </div>
+            </nav>
         </div>
+        <div class="col-md-8">
+                {% for o in ord %}
+                <div class="order">
+                    <div class="card">
+                        <div class="title">Purchase Reciept</div>
+                        <div class="info">
+                            <div class="row">
+                                <div class="col-7">
+                                    <span id="heading" class="text-danger">Date</span><br>
+                                    <span id="details" >{{o.order_at}}</span>
+                                </div>
+                                <div class="col-5 pull-right">
+                                    <span id="heading" class="text-danger">Order No.</span><br>
+                                    <span id="details">012j1gvs356c</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing">
+                            <div class="row">
+                                <div class="col-9">
+                                    <span id="name">{{o.pet.name}}</span>
+                                </div>
+                                <div class="col-3">
+                                    <span id="price">₹
+                                        {{o.pet.discounted_price}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <span id="name">Shipping</span>
+                                </div>
+                                <div class="col-3">
+                                    <span id="price">₹ 2000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <div class="row">
+                                <div class="col-9"></div>
+                                <div class="col-3 text-light"><big>{{o.pet.discounted_price|add:2000}}</big></div>
+                            </div>
+                        </div>
+                        <div class="tracking">
+                            <div class="title">Tracking Order</div>
+                        </div>
+
+                        {% if o.status == 'PENDING' %}
+                        <div class="progress-track ml-5">
+                            <ul id="progressbar">
+                                <li class="step0 active "
+                                    id="step1">Pending</li>
+                                <li class="step0  text-center"
+                                    id="step2">Processing</li>
+                                <li class="step0  text-right"
+                                    id="step3">Completed</li>
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                        {% if o.status == 'PROCESSING' %}
+                        <div class="progress-track ml-5">
+                            <ul id="progressbar">
+                                <li class="step0 active "
+                                    id="step1">Pending</li>
+                                <li class="step0 active text-center"
+                                    id="step2">Processing</li>
+                                <li class="step0  text-right"
+                                    id="step3">Completed</li>
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                        {% if o.status == 'COMPLETED' %}
+                        <div class="progress-track ml-5">
+                            <ul id="progressbar">
+                                <li class="step0 active "
+                                    id="step1">Pending</li>
+                                <li class="step0 active text-center"
+                                    id="step2">Processing</li>
+                                <li class="step0 active text-right"
+                                    id="step3">Completed</li>
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
 </div>
+
 {% endblock content %}
-
-
