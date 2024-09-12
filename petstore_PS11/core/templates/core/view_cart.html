@@ -1,5 +1,5 @@
 {% extends "core/base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="container-fluid profile view-cart view-cart-right-side-bar">
       <div class="row">
@@ -88,13 +88,25 @@
                         </div>
                     </div>
                     {% endfor %}
-                    
+                    {% if cart_items %}
                     <a href="{% url "checkout" %}" >
-                            <div >
-                                <button type="button" class="btn btn-success btn-block btn-lg proceed-to-pay ">Proceed to Pay</button>
-                            </div>
+                        <div >
+                            <button type="button" class="btn btn-success btn-block btn-lg proceed-to-pay ">Proceed to Pay</button>
+                        </div>
                         
                     </a>
+                    {% else %}
+                    <figure>
+                        <figcaption class="figcaption"><h2>Your cart is empty</h2></figcaption>
+                        <img src="{% static "core/images/empty_cart.png" %}" alt="empty_cart" class="empty-cart">
+                    </figure>
+                        <a href="{% url "home" %}" >
+                        <div >
+                            <button type="button" class="btn btn-success btn-block btn-lg proceed-to-pay ">Continue Shopping</button>
+                        </div>
+                        
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

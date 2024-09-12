@@ -1,9 +1,9 @@
 /* ================= Background CSS ======================== */
 /* Body background with gradient */
 body {
-    background: linear-gradient(135deg, #ffe02f, #ff5c20);
-    transition: background 0.5s ease;
-    font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffe02f, #ff5c20);
+  transition: background 0.5s ease;
+  font-family: 'Arial', sans-serif;
 }
 
 /* =================== Navbar CSS ========================= */
@@ -21,6 +21,7 @@ body {
   color: #fff;
   transition: color 0.3s;
 }
+
 .navbar-custom .nav-user {
   font-weight: bold;
   transition: color 0.3s;
@@ -68,9 +69,10 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.search-bar{
+.search-bar {
   width: 20%;
 }
+
 @media (max-width: 992px) {
   .navbar-custom {
     padding: 10px;
@@ -239,9 +241,10 @@ body {
   color: #555;
 }
 
-.container .card-deck a{
+.container .card-deck a {
   text-decoration: none;
 }
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .card-deck {
@@ -270,11 +273,13 @@ body {
 }
 
 .card-deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Space between cards */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* Space between cards */
 }
+
 /* ================ Featurette CSS ======================= */
 
 /* Featurette Section */
@@ -574,7 +579,8 @@ footer small {
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .filter-column {
-    border-right: none; /* Remove border on smaller screens */
+    border-right: none;
+    /* Remove border on smaller screens */
   }
 
   .filter-option {
@@ -625,85 +631,111 @@ footer small {
 
 .sort-options {
   display: flex;
-  justify-content: flex-end; /* Aligns content to the right */
-  width: 100%; /* Full width */
-  max-width: 100%; /* Ensures it doesn't exceed container width */
-  margin-bottom: 20px; /* Adds some space below */
-  padding-right: 15px; /* Optional: Adds padding to the right */
-  box-sizing: border-box; /* Ensures padding is included in the width */
+  justify-content: flex-end;
+  /* Aligns content to the right */
+  width: 100%;
+  /* Full width */
+  max-width: 100%;
+  /* Ensures it doesn't exceed container width */
+  margin-bottom: 20px;
+  /* Adds some space below */
+  padding-right: 15px;
+  /* Optional: Adds padding to the right */
+  box-sizing: border-box;
+  /* Ensures padding is included in the width */
 }
 
 .sort-by {
   font-size: 1.5rem;
   color: #663399;
-  margin-right: 10px; /* Space between label and dropdown */
+  margin-right: 10px;
+  /* Space between label and dropdown */
 }
 
 .sort-options .form-control {
-  flex-grow: 1; /* Allows the dropdown to grow */
-  max-width: 200px; /* Set a maximum width for the dropdown */
-  min-width: 150px; /* Set a minimum width for the dropdown */
+  flex-grow: 1;
+  /* Allows the dropdown to grow */
+  max-width: 200px;
+  /* Set a maximum width for the dropdown */
+  min-width: 150px;
+  /* Set a minimum width for the dropdown */
 }
 
 @media (max-width: 768px) {
   .sort-options {
-    flex-direction: column; /* Stacks elements vertically on small screens */
-    align-items: flex-start; /* Aligns items to the start */
-    padding-right: 0; /* Removes right padding on small screens */
+    flex-direction: column;
+    /* Stacks elements vertically on small screens */
+    align-items: flex-start;
+    /* Aligns items to the start */
+    padding-right: 0;
+    /* Removes right padding on small screens */
   }
 
   .sort-by {
-    margin-right: 0; /* Removes margin on small screens */
-    margin-bottom: 10px; /* Adds space below label on small screens */
+    margin-right: 0;
+    /* Removes margin on small screens */
+    margin-bottom: 10px;
+    /* Adds space below label on small screens */
   }
 
   .sort-options .form-control {
-    width: 70%; /* Full width on small screens */
-    max-width: none; /* Removes max-width on small screens */
+    width: 70%;
+    /* Full width on small screens */
+    max-width: none;
+    /* Removes max-width on small screens */
   }
 }
 
 /* General Styles for Sort Options */
 .sort-options {
   display: flex;
-  justify-content: flex-end; /* Aligns content to the right */
-  width: 100%; /* Full width */
-  margin-bottom: 20px; /* Adds some space below */
-  padding-right: 15px; /* Padding to the right for spacing */
-  box-sizing: border-box; /* Includes padding in the width */
+  justify-content: flex-end;
+  /* Aligns content to the right */
+  width: 100%;
+  /* Full width */
+  margin-bottom: 20px;
+  /* Adds some space below */
+  padding-right: 15px;
+  /* Padding to the right for spacing */
+  box-sizing: border-box;
+  /* Includes padding in the width */
 }
 
 .sort-by {
   font-size: 1.5rem;
   color: #663399;
-  margin-right: 10px; /* Space between label and dropdown */
+  margin-right: 10px;
+  /* Space between label and dropdown */
 }
 
 .sort-options .form-control {
-  max-width: 200px; /* Sets a max width for the dropdown */
-  min-width: 150px; /* Sets a min width for the dropdown */
-  width: auto; /* Ensures the dropdown adjusts within the max/min width */
+  max-width: 200px;
+  /* Sets a max width for the dropdown */
+  min-width: 150px;
+  /* Sets a min width for the dropdown */
+  width: auto;
+  /* Ensures the dropdown adjusts within the max/min width */
 }
 
 /* ========================== Dog Categories CSS ============================ */
 
-.dog-name{
-  color:#FF4500
+.dog-name {
+  color: #FF4500
 }
 
-.dog-discounted-price{
+.dog-discounted-price {
   color: #663399;
 }
 
 
 /* ========================= Pet Details CSS ===================== */
 
-.petdetails{
+.petdetails {
   margin-top: 8%;
 
 }
 
-.pet-discounted-price{
+.pet-discounted-price {
   color: #663399;
 }
 
@@ -716,7 +748,7 @@ footer small {
   color: #FF4500;
 }
 
-.pet-description{
+.pet-description {
   font-size: 1.3rem;
   font-weight: 300;
   line-height: 1.2;
@@ -724,18 +756,20 @@ footer small {
   color: #3b1404
 }
 
-.add-to-cart{
+.add-to-cart {
   background-color: #FF4500;
-}
-.add-to-cart:hover{
- background-color: #fcdb1e;
 }
 
-.buy-now{
+.add-to-cart:hover {
+  background-color: #129406;
+}
+
+.buy-now {
   background-color: #fcdb1e;
 }
-.buy-now:hover{
-  background-color: #FF4500;
+
+.buy-now:hover {
+  background-color: #129406;;
 }
 
 
@@ -831,7 +865,7 @@ a p:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   margin: auto;
-    /* Blur effect */
+  /* Blur effect */
 }
 
 /* Heading Styling */
@@ -907,14 +941,15 @@ a p:hover {
   }
 }
 
-.login-page{
+.login-page {
   margin-top: 10%;
 }
-.register-page{
+
+.register-page {
   margin-top: 7%;
 }
 
-.register .reg a{
+.register .reg a {
   color: #FFf;
   font-size: 1.3rem;
   padding-right: 5%;
@@ -985,13 +1020,14 @@ a p:hover {
   text-decoration: none;
 }
 
-.view-cart{
+.view-cart {
   margin-top: 5%;
 }
 
-.view-cart-right-side-bar{
+.view-cart-right-side-bar {
   background: linear-gradient(135deg, #ffe02f, #ff5c20);
 }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .sidebar {
@@ -1033,7 +1069,7 @@ a p:hover {
   margin-bottom: 1.5rem;
 }
 
-.profile{
+.profile {
   padding-bottom: 7%;
 }
 
@@ -1073,20 +1109,20 @@ a p:hover {
 
 /* ====================== Address Page CSS =================== */
 
-.add-address{
+.add-address {
   margin-left: 100%;
   font-size: 1.3rem;
   padding: 1%;
   border-radius: 5px;
 }
 
-.add-address:hover{
+.add-address:hover {
   background-color: green;
   border-radius: 5px;
   color: #fcdb1e;
 }
 
-.address-detail{
+.address-detail {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -1136,3 +1172,147 @@ a p:hover {
     margin: 0 auto;
   }
 }
+
+
+
+/* ========================= Order Summary Page CSS ======================= */
+.checkout-button {
+  gap: 15px;
+  /* Adjust the gap as needed */
+}
+
+.checkout-back {
+  margin-left: 100%;
+  width: 100%;
+  text-align: center;
+  /* Center the buttons */
+}
+
+.checkout-process {
+  margin-left: 20%;
+  width: 100%;
+  text-align: center;
+  /* Center the buttons */
+}
+
+@media (max-width: 768px) {
+  .checkout-button {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkout-back {
+    width: 100%;
+    /* Make buttons full-width on smaller screens */
+    text-align: center;
+    /* Center the buttons */
+  }
+
+  .checkout-process {
+    width: 100%;
+    margin-left: 100%;
+  }
+}
+
+.empty-cart{
+  width: 40%;
+  margin-top: 5%;
+  margin-left: 30%;
+}
+
+
+.proceed-to-pay{
+  margin-top: 8%;
+  width: 50%;
+  margin-left: 28%;
+}
+
+.figcaption{
+  text-align: center;
+  color: #FFf;
+}
+
+
+/* ===================== Forget Password CSS ====================== */
+
+/* Container gradient background */
+.forget-pass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+}
+
+/* Form container styling */
+.profile-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 1s ease-in-out;
+  border-radius: 15px;
+}
+
+/* Gradient button styling */
+.btn-gradient {
+  background: linear-gradient(135deg, #ffe02f, #e6c407);
+  color: red;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+  color: whitesmoke;
+  background: linear-gradient(to right, #16a103, #1bbd06);
+  transform: scale(1.05);
+}
+
+/* Responsive Form and Elements */
+@media (max-width: 768px) {
+  .profile-form {
+    padding: 1.5rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+  }
+}
+
+
+/* =================== Password Reset Done ================= */
+
+/* Full-page gradient background */
+.success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7%;
+ 
+}
+
+/* Styling for success message container */
+.success-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent background */
+  padding: 2rem;
+  border-radius: 10px;
+  animation: fadeInUp 1s ease-in-out;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .success-content {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .btn-gradient {
+    font-size: 1rem;
+  }
+}
+

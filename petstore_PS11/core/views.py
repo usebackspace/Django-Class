@@ -4,6 +4,7 @@ from . models import Customer,Pet,Order,Cart
 from . forms import RegistrationForm,AuthenticateForm,ChangePasswordForm,UserProfileForm,AdminProfileForm,CustomerForm
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib.auth import authenticate,login,logout,update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 
@@ -346,6 +347,7 @@ def order(request):
     return render(request,'core/order.html',{'ord':ord})
 
 #========================================== Buy Now ========================================================
+@login_required(login_url='login')
 def buynow(request,id):
     pet = Pet.objects.get(pk=id)     # cart_items will fetch product of current user, and show product available in the cart of the current user.
     delhivery_charge =2000

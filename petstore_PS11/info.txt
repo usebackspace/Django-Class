@@ -1,3 +1,6 @@
 petstore - Phase 11
 
-In this project we enhance the frontend part of the petstore.
+1. In this project we enhance the frontend part of the petstore.
+
+2. We have added empty cart image in view_cart.html file if there is no item in a cart.
+
