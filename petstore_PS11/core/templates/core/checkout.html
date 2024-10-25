@@ -5,8 +5,6 @@
 
 <div class="container">
     <div class="row">
-<!-- ========================================= Order Summary Start Here ====================================-->
-
         <div class="col-sm-10 mt-5 ml-5 ">
             <div class="container ">
                     <div class="row">
@@ -60,15 +58,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-        </div>
-
-<!-- ========================================= Order summary End Here ====================================-->
-
-<!--================================= Address Page Start Here =====================================-->
-            <div class="cotainer checkout-process checkout-address"> 
-                <div class="row">
-                    <form method="POST" action="{% url 'payment' %}">
+                    <div class="row">
+                       <form method="POST" action="{% url 'payment' %}">
                         {% csrf_token %}
                         <div class="col-sm-4 mt-3">
                             {% for add in address %}
@@ -102,10 +93,10 @@
                                 </div> 
                             </div>           
                         </div>
-                    </form>
+                    </form> 
+                    </div>
                 </div>
-            </div>
-        </div>
+        </div>            
     </div>
 </div>
 {% endblock content %}
