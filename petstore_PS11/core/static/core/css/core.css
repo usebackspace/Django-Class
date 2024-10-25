@@ -1175,7 +1175,7 @@ a p:hover {
 
 
 
-/* ========================= Order Summary Page CSS ======================= */
+/* ========================= CHeckout Page CSS ======================= */
 .checkout-button {
   gap: 15px;
   /* Adjust the gap as needed */
@@ -1232,6 +1232,13 @@ a p:hover {
   color: #FFf;
 }
 
+.proceed-to-payment:hover{
+  background-color: #FF4500;
+}
+
+.checkout-address{
+  display: flex;
+}
 
 /* ===================== Forget Password CSS ====================== */
 
