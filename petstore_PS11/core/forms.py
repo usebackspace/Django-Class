@@ -8,11 +8,12 @@ class RegistrationForm(UserCreationForm):
     password2 = forms.CharField(label='Confirm Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))
     class Meta:
         model =User
-        fields = ['username','first_name','email','password1','password2']
+        fields = ['username','first_name','last_name','email','password1','password2']
         labels ={'email':'Email'}
         widgets= {'username':forms.TextInput(attrs={'class':'form-control'}),
                   'email':forms.TextInput(attrs={'class':'form-control'}),
                   'first_name':forms.TextInput(attrs={'class':'form-control'}),
+                  'last_name':forms.TextInput(attrs={'class':'form-control'}),
                   }
         
 class AuthenticateForm(AuthenticationForm):
@@ -32,9 +33,10 @@ class UserProfileForm(UserChangeForm):
         fields =['username','first_name','email','date_joined','last_login']
         widgets= {'username':forms.TextInput(attrs={'class':'form-control'}),
                   'first_name':forms.TextInput(attrs={'class':'form-control'}),
+                  'last_name':forms.TextInput(attrs={'class':'form-control'}),
                   'email':forms.TextInput(attrs={'class':'form-control'}),
-                  'date_joined':forms.DateInput(attrs={'class':'form-control','type': 'date'}),
-                  'last_login':forms.DateInput(attrs={'class':'form-control','type': 'date'}),
+                  'date_joined':forms.DateTimeInput(attrs={'class':'form-control','type': 'datetime-local','disabled':'disabled'}),
+                  'last_login':forms.DateTimeInput(attrs={'class':'form-control','type': 'datetime-local','disabled':'disabled'}),
                   }
 
 class AdminProfileForm(UserChangeForm):
@@ -45,6 +47,7 @@ class AdminProfileForm(UserChangeForm):
         widgets= {'username':forms.TextInput(attrs={'class':'form-control'}),
                   'email':forms.TextInput(attrs={'class':'form-control'}),
                   'first_name':forms.TextInput(attrs={'class':'form-control'}),
+                  'last_name':forms.TextInput(attrs={'class':'form-control'}),
                   }
         
 
