@@ -12,3 +12,4 @@ petstore - Phase 11
 5. We have worked on Time zone to correct the time by going into settings.py file
    changing TIME_ZONE = 'UTC' to TIME_ZONE = 'Asia/Kolkata'
 
+6. In this we have added non-field errors.
