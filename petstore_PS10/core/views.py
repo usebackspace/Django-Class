@@ -96,6 +96,18 @@ def registration(request):
             mf = RegistrationForm(request.POST)
             if mf.is_valid():
                 mf.save()
+            # ========== Email Integration ============
+            email = request.POST['email']
+            user = User.objects.filter(email=email).first()
+            if user:
+                send_mail(
+                    'Subcribed !',
+                    f'Thank you for choosing us',
+                    'fordjangopproject@gmail.com',  # Use a verified email address
+                    [email],
+                    fail_silently=False,
+                )
+            # ========== Email Integration End ============
                 return redirect('registration')    
         else:
             mf  = RegistrationForm()
