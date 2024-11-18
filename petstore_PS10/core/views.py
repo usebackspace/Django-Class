@@ -387,8 +387,8 @@ def forgot_password(request):
             reset_url = request.build_absolute_uri(f'/reset_password/{uidb64}/{token}/')           
             send_mail(
                 'Password Reset',
-                f'Click the following link to reset your password: {request.build_absolute_uri(reset_url)}',
-                'from@example.com',
+                f'Click the following link to reset your password: {reset_url}',
+                'fordjangopproject@gmail.com',  # Use a verified email address
                 [email],
                 fail_silently=False,
             )

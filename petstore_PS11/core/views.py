@@ -419,7 +419,8 @@ def forgot_password(request):
                 fail_silently=False,
             )
             return redirect('passwordresetdone')
-    return render(request, 'core/forgot_password.html')
+    else:
+        return render(request, 'core/forgot_password.html')
                                          
     # return render(request,'core/forgot_password.html',)
 

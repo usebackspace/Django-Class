@@ -130,8 +130,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.brevo.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '74ac43001@smtp-brevo.com'
-EMAIL_HOST_PASSWORD = 'MX8Z76zBxGQtfbHI'
+EMAIL_HOST_USER = '7fef61001@smtp-brevo.com'
+EMAIL_HOST_PASSWORD = 'tpWh82zrMKnYB9Eq'
 
 # Token settings
 # The number of seconds until the reset token expires (default: 2592000 seconds = 30 days)

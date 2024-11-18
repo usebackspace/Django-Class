@@ -126,11 +126,13 @@ PAYPAL_TEST = True
 
 #========================== Email Settings =================================
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-relay.brevo.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '74ac43001@smtp-brevo.com'
-EMAIL_HOST_PASSWORD = 'MX8Z76zBxGQtfbHI'
+EMAIL_HOST = 'smtp-relay.brevo.com'  # Brevo's SMTP server
+EMAIL_PORT = 587  # SMTP port for TLS
+EMAIL_USE_TLS = True  # Use TLS for secure connection
+EMAIL_HOST_USER = '80290d002@smtp-brevo.com'  # This is the Brevo SMTP login email
+EMAIL_HOST_PASSWORD = 'nUxLdA1b9CkMwTFD'  # Brevo SMTP password
+DEFAULT_FROM_EMAIL = 'fordjangopproject@gmail.com'  # Your Gmail address (or a verified Brevo email address)
+
 
 # Token settings
 # The number of seconds until the reset token expires (default: 2592000 seconds = 30 days)
