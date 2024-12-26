@@ -226,9 +226,6 @@ def add_address(request):
                 city= mf.cleaned_data['city']
                 state= mf.cleaned_data['state']
                 pincode= mf.cleaned_data['pincode']
-                print(state)
-                print(city)
-                print(name)
                 Customer(user=user,name=name,address=address,city=city,state=state,pincode=pincode).save()
                 return redirect('address')           
     else:
@@ -419,6 +416,8 @@ def forgot_password(request):
                 fail_silently=False,
             )
             return redirect('passwordresetdone')
+        else:
+            messages.success(request,'Enter Valid Email Address')
     return render(request, 'core/forgot_password.html')
                                          
     # return render(request,'core/forgot_password.html',)
